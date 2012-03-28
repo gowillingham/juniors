@@ -1,6 +1,7 @@
 <h1>Listing users</h1>
 
-<table>
+<table class="table table-striped">
+  <thead>
   <tr>
     <th>Name</th>
     <th>Email</th>
@@ -8,18 +9,19 @@
     <th></th>
     <th></th>
   </tr>
-
+  </thead>
+</tbody>
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.name %></td>
+    <td><%= link_to user.name, user %></td>
     <td><%= user.email %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Edit', edit_user_path(user), :class => 'btn btn-mini' %></td>
+    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-mini btn-danger' %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'New User', new_user_path, :class => 'btn btn-primary' %>
