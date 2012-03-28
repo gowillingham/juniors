@@ -25,7 +25,6 @@ group :development do
 end
 
 group :test do
-  # gem 'rspec', '2.5.0'  .. not sure if I need this entry as I have rspec-rails installed in :development, :test group.s
   gem 'webrat', '0.7.3'
   gem 'factory_girl_rails', '1.0.1'
   gem 'ZenTest', '4.5.0'
@@ -41,6 +40,8 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
+
+  gem 'bootstrap-sass'
 end
 
 gem 'jquery-rails'
