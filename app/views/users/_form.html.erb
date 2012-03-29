@@ -28,19 +28,21 @@
       </div>
     </div>
 
-    <div class="control-group">
-      <%= f.label :password, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.password_field :password, :class => 'text_field' %>
+    <% unless controller.action_name.downcase == 'edit' %>
+      <div class="control-group">
+        <%= f.label :password, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.password_field :password, :class => 'text_field' %>
+        </div>
       </div>
-    </div>
 
-    <div class="control-group">
-      <%= f.label :password_confirmation, 'Confirm password', :class => 'control-label' %>
-      <div class="controls">
-        <%= f.password_field :password_confirmation, :class => 'text_field' %>
+      <div class="control-group">
+        <%= f.label :password_confirmation, 'Confirm password', :class => 'control-label' %>
+        <div class="controls">
+          <%= f.password_field :password_confirmation, :class => 'text_field' %>
+        </div>
       </div>
-    </div>
+    <% end %>
 
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>

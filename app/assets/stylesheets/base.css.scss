@@ -6,3 +6,14 @@ body		{ padding-top:60px; }
 	width:1%;
 	white-space:nowrap; 
 }
+
+.field_with_errors label {
+	color:red;
+	font-weight:bold;
+}
+
+.field_with_errors input,
+.field_with_errors select,
+.field_with_errors input[type='checkbox'] {
+	border-color:red;
+}
