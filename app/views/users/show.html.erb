@@ -1,15 +1,30 @@
+<h1>Details for <%= @user.name %></h1>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<table class="table table-bordered">
+	<tbody>
+		<tr>
+			<td class="shrink"><strong>#:</strong> </td>
+			<td><%= @user.id %></td>
+		</tr>
+		<tr>
+			<td class="shrink"><strong>Name:</strong> </td>
+			<td><%= @user.name %></td>
+		</tr>
+		<tr>
+			<td class="shrink"><strong>Email:</strong> </td>
+			<td><%= @user.email %></td>
+		</tr>
+		<tr>
+			<td class="shrink"><strong>Created at:</strong> </td>
+			<td><%= @user.created_at %></td>
+		</tr>
+		<tr>
+			<td class="form-actions" colspan="2">
+				<%= link_to 'Back', users_path, :class => 'btn' %>
+				<%= link_to 'Edit', edit_user_path(@user), :class => 'btn' %>
+				<%= link_to 'Destroy', user_path(@user), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+			</td>
+		</tr>
+	</tbody>
+</table>
