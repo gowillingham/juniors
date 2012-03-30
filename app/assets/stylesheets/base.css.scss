@@ -11,9 +11,11 @@ body		{ padding-top:60px; }
 	color:red;
 	font-weight:bold;
 }
-
 .field_with_errors input,
 .field_with_errors select,
 .field_with_errors input[type='checkbox'] {
 	border-color:red;
+}
+.alert.alert-error ul {
+	
 }
