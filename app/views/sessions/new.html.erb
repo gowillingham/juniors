@@ -1,2 +1,33 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<%= form_for :session, :url => { :action => :create }, :html => {:method => :post, :class => 'form-horizontal' } do |f| %>
+	<fieldset>
+		<legend>Sign in</legend>
+		<%= render 'shared/show_flash' %>
+
+		<div class="control-group">
+			<%= f.label :email, :class => 'control-label' %>
+			<div class="controls">
+				<%= f.text_field :email %>
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<%= f.label :password, :class => 'control-label' %>
+			<div class="controls">
+				<%= f.password_field :password %>
+			</div>
+		</div>
+
+		<div class="control-group">
+			<div class="controls">
+				<label class="checkbox">
+					<%= f.check_box :remember_me, { :checked => true } %> Remember me?
+				</label>
+			</div>
+		</div>
+
+		<div class="form-actions">
+			<%= f.submit 'Sign in', :class => 'btn btn-primary' %>
+			or <%= link_to 'Cancel', root_path %>
+		</div>		
+	</fieldset>
+<% end %>
