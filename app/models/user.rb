@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
   validates :password,
   	:presence => { :on => :create },
   	:confirmation => true
+  validates :name,
+  	:presence => true
 end

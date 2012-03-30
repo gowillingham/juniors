@@ -31,6 +31,10 @@ describe User do
 			User.create(@attr)
 			User.new(@attr).should_not be_valid
 		end
+
+		it "should require a name" do
+			User.new(@attr.merge(:name => nil)).should_not be_valid
+		end
 	end
 
 	it "should add a user given valid attributes" do
