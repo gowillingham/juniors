@@ -1,14 +1,12 @@
 Juniors::Application.routes.draw do
-  get "pages/home"
+  match '/contact', :to => 'pages#contact'
+  match '/about', :to => 'pages#about'
+  match '/privacy', :to => 'pages#privacy'
 
-  get "pages/about"
-
-  get "pages/privacy"
-
-  get "pages/contact"
+  match '/signin', :to => 'sessions#new'
 
   resources :users
-  resources :sessions, :only => [:new, :create, :destroy]
+  resources :sessions, :only => [:create, :destroy]
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
