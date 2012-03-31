@@ -1,3 +1,9 @@
+Autotest.add_hook :initialize do |autotest|
+  %w{.git .svn .hg .DS_Store ._* vendor tmp log doc}.each do |exception|
+    autotest.add_exception(exception)
+  end
+end
+
 require 'autotest/growl'
 
 # keeps console from clearing each time new test is run
