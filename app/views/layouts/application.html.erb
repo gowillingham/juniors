@@ -10,7 +10,7 @@
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body class="<%= "#{controller.controller_name} #{controller.action_name}" %>">
 
 	<nav class="navbar navbar-fixed-top">
 	  <div class="navbar-inner">
@@ -25,16 +25,15 @@
 	      </a>
 	      <div class="nav-collapse">
 	        <ul class="nav">
-	          <li><%= link_to "Home", root_path %></li>
-	          <li><%= link_to "Register" %></li>
-	          <li><%= link_to "About" %></li>
-	          <li><%= link_to "Privacy" %></li>
-	          <li><%= link_to "Contact us" %></li>
+	          <li><%= link_to "Home", root_path, :class => :home %></li>
+	          <li><%= link_to "About", pages_about_path, :class => :about %></li>
+	          <li><%= link_to "Privacy", pages_privacy_path, :class => :privacy %></li>
+	          <li><%= link_to "Contact us", pages_contact_path, :class => :contact %></li>
 	          <li>
 	          	<% if logged_in? %>
-			          <%= link_to "Sign out", session_path(current_user), :method => :delete %>
+			          <%= link_to "Sign out", session_path(current_user), :method => :delete, :class => :signin %>
 			        <% else %>
-			          <%= link_to "Sign in", new_session_path %>
+			          <%= link_to "Sign in", new_session_path, :class => :signin %>
 			      	<% end %>
 	         	</li>
 	        </ul>

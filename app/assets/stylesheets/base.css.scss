@@ -7,6 +7,8 @@ body		{ padding-top:60px; }
 	white-space:nowrap; 
 }
 
+
+/* -- set rails form error styles -- */
 .field_with_errors label {
 	color:red;
 	font-weight:bold;
@@ -16,6 +18,13 @@ body		{ padding-top:60px; }
 .field_with_errors input[type='checkbox'] {
 	border-color:red;
 }
-.alert.alert-error ul {
-	
+
+/* -- set boostrap nav bar selected links -- */
+.pages.home nav a.home,
+.pages.about nav a.about,
+.pages.privacy nav a.privacy,
+.pages.contact nav a.contact,
+.sessions.new nav a.signin {
+	color:#fff;
+	font-weight:bold;
 }
