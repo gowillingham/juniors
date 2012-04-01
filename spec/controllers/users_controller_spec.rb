@@ -5,21 +5,43 @@ describe UsersController do
   def valid_attributes
     {
       :name => 'first last',
-      :email => 'email@exampel.com',
+      :email => 'email@example.com',
       :password => 'password', 
       :password_confirmation => 'password'
     }
   end
 
+  before(:each) do
+    @user = User.create!(
+      :name => 'first_name last_name', 
+      :email => 'first_name@example.com', 
+      :password => 'password', 
+      :password_confirmation => 'password'
+    )
+    login_user
+  end
+
   describe "GET index" do
+    it "should reject unauthenticated user" do
+      logout_user
+      get :index
+      response.should redirect_to(signin_path)
+    end
+
     it "assigns all users as @users" do
       user = User.create! valid_attributes
       get :index
-      assigns(:users).should eq([user])
+      assigns(:users).should eq([@user, user])
     end
   end
 
   describe "GET show" do
+    it "should reject unauthenticated user" do
+      logout_user
+      get :show
+      response.should redirect_to(signin_path)
+    end
+
     it "assigns the requested user as @user" do
       user = User.create! valid_attributes
       get :show, :id => user
@@ -28,6 +50,12 @@ describe UsersController do
   end
 
   describe "GET new" do
+    it "should reject unauthenticated user" do
+      logout_user
+      get :new
+      response.should redirect_to(signin_path)
+    end
+
     it "assigns a new user as @user" do
       get :new
       assigns(:user).should be_a_new(User)
@@ -35,6 +63,12 @@ describe UsersController do
   end
 
   describe "GET edit" do
+    it "should reject unauthenticated user" do
+      logout_user
+      get :edit
+      response.should redirect_to(signin_path)
+    end
+
     it "assigns the requested user as @user" do
       user = User.create! valid_attributes
       get :edit, :id => user
@@ -43,6 +77,12 @@ describe UsersController do
   end
 
   describe "POST create" do
+    it "should reject unauthenticated user" do
+      logout_user
+      post :create, :user => valid_attributes
+      response.should redirect_to(signin_path)
+    end
+
     describe "with valid params" do
       it "creates a new User" do
         expect {
@@ -83,6 +123,13 @@ describe UsersController do
   describe "PUT update" do
     before(:each) do
       @updated_attributes = valid_attributes.merge(:email => 'new_address@example.com', :name => 'new name')
+    end
+
+    it "should reject unauthenticated user" do
+      logout_user
+      user = User.create! valid_attributes
+      put :update, :id => user, :user => valid_attributes
+      response.should redirect_to(signin_path)
     end
 
     describe "with valid params" do
@@ -133,6 +180,13 @@ describe UsersController do
   end
 
   describe "DELETE destroy" do
+    it "should reject unauthenticated user" do
+      logout_user
+      user = User.create! valid_attributes
+      delete :destroy, :id => user
+      response.should redirect_to(signin_path)
+    end
+
     it "destroys the requested user" do
       user = User.create! valid_attributes
       expect {
