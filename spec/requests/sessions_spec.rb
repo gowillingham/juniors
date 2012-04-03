@@ -26,7 +26,6 @@ describe 'Sessions' do
 
 		describe 'success' do
 			it "should log in the user" do
-				User.find(@user.id).should eq(@user)
 				visit signin_path
 				fill_in 'Email', 			:with => @user.email
 				fill_in 'Password', 	:with => 'password'

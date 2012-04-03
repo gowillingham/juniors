@@ -46,7 +46,10 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, success: 'User was successfully created.' }
+        format.html { 
+          flash[:success] = 'The user was successfully created'
+          redirect_to @user
+        }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -81,7 +84,10 @@ class UsersController < ApplicationController
     @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to users_url }
+      format.html { 
+        flash[:success] = 'The user was removed'
+        redirect_to users_url 
+      }
       format.json { head :no_content }
     end
   end
