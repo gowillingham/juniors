@@ -1,4 +1,6 @@
 Juniors::Application.routes.draw do
+  resources :products
+
   match '/contact', :to => 'pages#contact'
   match '/about', :to => 'pages#about'
   match '/privacy', :to => 'pages#privacy'

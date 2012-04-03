@@ -1,5 +1,8 @@
 require 'spec_helper'
 
-describe "pages/privacy.html.erb" do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe "pages/privacy" do
+  it "should be success" do
+  	render
+  	rendered.should have_selector("h1", :content => 'Privacy')
+  end
 end
