@@ -1,30 +1,44 @@
-<p id="notice"><%= notice %></p>
+<%= render 'shared/show_flash' %>
 
-<p>
-  <b>Name:</b>
-  <%= @product.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @product.description %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @product.category %>
-</p>
-
-<p>
-  <b>Enabled:</b>
-  <%= @product.enabled %>
-</p>
-
-<p>
-  <b>Price:</b>
-  <%= @product.price %>
-</p>
-
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<div class="page-header">
+<h1>Details for <%= @product.name %></h1>
+</div>
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <td class="shrink"><strong>#:</strong> </td>
+      <td><%= @product.id %></td>
+    </tr>
+    <tr>
+      <td class="shrink"><strong>Name:</strong> </td>
+      <td><%= @product.name %></td>
+    </tr>
+    <tr>
+      <td class="shrink"><strong>Description:</strong> </td>
+      <td><%= @product.description %></td>
+    </tr>
+    <tr>
+      <td class="shrink"><strong>Price (in cents):</strong> </td>
+      <td><%= @product.price %></td>
+    </tr>
+    <tr>
+      <td class="shrink"><strong>Category:</strong> </td>
+      <td><%= @product.category %></td>
+    </tr>
+    <tr>
+      <td class="shrink"><strong>Enabled:</strong> </td>
+      <td><%= @product.enabled %></td>
+    </tr>
+    <tr>
+      <td class="shrink"><strong>Created at:</strong> </td>
+      <td><%= @product.created_at %></td>
+    </tr>
+    <tr>
+      <td class="form-actions" colspan="2">
+        <%= link_to 'All products', products_path, :class => 'btn' %>
+        <%= link_to 'Edit', edit_product_path(@product), :class => 'btn' %>
+        <%= link_to 'Destroy', product_path(@product), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+      </td>
+    </tr>
+  </tbody>
+</table>
