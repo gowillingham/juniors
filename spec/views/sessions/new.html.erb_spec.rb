@@ -1,5 +1,9 @@
 require 'spec_helper'
 
-describe "sessions/new.html.erb" do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe "sessions/new" do
+	it "displays form to sign in " do
+	  render
+	  rendered.should have_selector('form', :action => sessions_path, :method => 'post')
+	  rendered.should have_selector('input', :value => 'Sign in')
+	end
 end
