@@ -2,21 +2,7 @@
   <fieldset>
     <legend><%= controller.action_name.capitalize %> User</legend>
 
-  <% if @user.errors.any? %>
-    <div class="alert alert-error">
-      <p>
-        <strong>Sorry, there was a problem with the info you provided. </strong>
-       Please correct your information in the form below and try again.
-      </p>
-
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
+    <%= render 'shared/form_errors', :object => @user %>
     <div class="control-group">
       <%= f.label :name, :class => 'control-label' %>
       <div class="controls">
