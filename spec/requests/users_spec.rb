@@ -74,34 +74,4 @@ describe "Users" do
 			end
 		end 
 	end
-
-	describe "index" do 
-		it "should display a listing of all the users" do
-			user1 = Factory(:user)
-			user2 = Factory(:user)
-			visit users_path
-
-			assert_select 'tbody tr' do |rows|
-				rows.each do |row|
-					assert_select row, 'a', 3
-					assert_select row, 'a', { :count => 1, :text => 'Edit' }
-					assert_select row, 'a', { :count => 1, :text => 'Destroy' }
-					assert_select row, 'a', { :count => 1, :text => user1.name }
-				end
-			end
-			response.should have_selector('td', :content => user1.name)
-			response.should have_selector('td', :content => user2.name)
-			response.should have_selector('td a', :content => 'Edit', :href => edit_user_path(user1))
-		end
-	end 
-
-	describe "show" do
-		it "should display the details for the designated user" do
-			user = Factory(:user)
-			visit user_path(user)
-			response.should have_selector('td', :content => user.name)
-			response.should have_selector('td', :content => user.email)
-			response.should have_selector('td', :content => user.created_at.to_s)
-		end
-	end
 end
