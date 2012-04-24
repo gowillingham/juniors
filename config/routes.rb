@@ -1,4 +1,6 @@
 Juniors::Application.routes.draw do
+  resources :registrations
+
   resources :products
 
   match '/contact', :to => 'pages#contact'
