@@ -69,6 +69,11 @@ describe Registration do
   		registration.should_not be_valid
   	end
 
+    it "should require phone of proper format" do
+      registration = Registration.new(@attr.merge(:phone => 'not a phone'))
+      registration.should_not be_valid
+    end
+
   	it "should require a grade" do
   		registration = Registration.new(@attr.merge(:grade => nil))
   		registration.should_not be_valid

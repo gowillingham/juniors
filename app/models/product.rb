@@ -1,6 +1,8 @@
 class Product < ActiveRecord::Base
-	has_many :registrations
+	attr_accessible :name, :description, :enabled, :category, :price
 	
+	has_many :registrations
+
 	validates :name,
 		:presence => true
 end

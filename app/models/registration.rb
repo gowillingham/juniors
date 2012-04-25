@@ -1,9 +1,14 @@
 class Registration < ActiveRecord::Base
+	attr_accessible :first_name, :last_name, :parent_first_name, :parent_last_name, :email, :address, :city, :state, :zip, :phone, :tshirt_size,
+		:parent_tshirt_size, :school, :grade, :parent_helper, :waiver, :volleyball, :note, :product_id
+
 	belongs_to :product
 
 	validates :email,
 		:confirmation => true,
     :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
+  validates :phone, 
+    :format => { :with => /^[\(\)0-9\- \+\.]{10,20}$/ }
 	validates :first_name,
 		:presence => true
 	validates :last_name,
