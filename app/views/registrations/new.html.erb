@@ -1,5 +1,8 @@
-<h1>New registration</h1>
+<%= form_for @registration, :html => { :class => 'form-horizontal' } do |f| %>
+  <fieldset>
+    <legend>New Registration</legend>
+    <%= render 'shared/form_errors', :object => @registration %>
+    <%= render 'fields', :f => f %>
+  </fieldset>
+<% end %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', registrations_path %>

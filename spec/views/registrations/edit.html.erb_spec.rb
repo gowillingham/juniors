@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe "registrations/edit" do
   before(:each) do
+    @product = Factory(:product)
     @registration = assign(:registration, stub_model(Registration,
       :first_name => "",
       :last_name => "",
@@ -21,7 +22,7 @@ describe "registrations/edit" do
       :waiver => "",
       :parent_helper => "",
       :volleyball => "",
-      :product_id => 1
+      :product_id => @product.id
     ))
   end
 
@@ -38,17 +39,17 @@ describe "registrations/edit" do
       assert_select "input#registration_phone", :name => "registration[phone]"
       assert_select "input#registration_address", :name => "registration[address]"
       assert_select "input#registration_city", :name => "registration[city]"
-      assert_select "input#registration_state", :name => "registration[state]"
+      assert_select "select#registration_state", :name => "registration[state]"
       assert_select "input#registration_zip", :name => "registration[zip]"
-      assert_select "input#registration_tshirt_size", :name => "registration[tshirt_size]"
-      assert_select "input#registration_parent_tshirt_size", :name => "registration[parent_tshirt_size]"
-      assert_select "input#registration_school", :name => "registration[school]"
-      assert_select "input#registration_grade", :name => "registration[grade]"
-      assert_select "input#registration_note", :name => "registration[note]"
+      assert_select "select#registration_tshirt_size", :name => "registration[tshirt_size]"
+      assert_select "select#registration_parent_tshirt_size", :name => "registration[parent_tshirt_size]"
+      assert_select "select#registration_school", :name => "registration[school]"
+      assert_select "select#registration_grade", :name => "registration[grade]"
+      assert_select "textarea#registration_note", :name => "registration[note]"
       assert_select "input#registration_waiver", :name => "registration[waiver]"
       assert_select "input#registration_parent_helper", :name => "registration[parent_helper]"
       assert_select "input#registration_volleyball", :name => "registration[volleyball]"
-      assert_select "input#registration_product_id", :name => "registration[product_id]"
+      assert_select "select#registration_product_id", :name => "registration[product_id]"
     end
   end
 end

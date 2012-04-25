@@ -1,0 +1,147 @@
+<div class="control-group">
+  <%= f.label :product_id, 'Which session?', :class => 'control-label' %>
+  <div class="controls">
+    <%= f.select :product_id, Product.find(:all, :conditions => ['category =?', 'inhouse']).map { |p| [p.name, p.id] }, { :prompt => '' }, :class => 'input-auto' %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :first_name, 'Player first name', :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :first_name %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :last_name, 'Player last name', :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :last_name %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :parent_first_name, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :parent_first_name %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :parent_last_name, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :parent_last_name %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :email, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :email %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :email_confirmation, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :email_confirmation %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :phone, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :phone %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :address, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :address %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :city, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :city %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :state, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.select :state, [['MN', 'MN']], {}, :class => "input-mini" %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :zip, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :zip, :class => 'input-small' %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :tshirt_size, :class => 'control-label' %>
+  <div class="controls">
+      <%= f.select :tshirt_size, SIZE_OPTIONS, { :prompt => '' }, :class => 'input-auto' %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :school, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.select :school, SCHOOL_OPTIONS, { :prompt => '' }, :class => 'input-auto' %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :grade, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.select :grade, GRADE_OPTIONS, { :prompt => '' }, :class => 'input-mini' %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :note, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_area :note, :class => 'input-xlarge', :rows => 3 %>
+  </div>
+</div>
+
+<div class="control-group">
+  <div class="controls">
+    <%= f.label :parent_helper, :class => 'checkbox' do %>
+      <%= f.check_box :parent_helper %> Parent helper?
+    <% end %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :parent_tshirt_size, :class => 'control-label' %>
+  <div class="controls">
+    <%= f.select :parent_tshirt_size, SIZE_OPTIONS, { :prompt => '' }, :class => 'input-auto' %>
+  </div>
+</div>
+
+<div class="control-group">
+  <div class="controls">
+    <%= f.label :waiver, :class => 'checkbox' do %>
+      <%= f.check_box :waiver %> Read and agree to waiver?
+    <% end %>
+  </div>
+</div>
+
+<div class="control-group">
+  <div class="controls">
+    <%= f.label :volleyball, :class => 'checkbox' do %>
+      <%= f.check_box :volleyball %> Include lite volleyball?
+    <% end %>
+  </div>
+</div>
+
+<div class="form-actions">
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  or <%= link_to 'Cancel', root_path %>
+</div>

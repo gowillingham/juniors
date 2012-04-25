@@ -29,6 +29,8 @@ describe RegistrationsController do
   end
 
   describe "GET index" do
+    it "rejects un-authenticated user"
+
     it "assigns all registrations as @registrations" do
       registration = Registration.create! valid_attributes
       get :index
@@ -37,6 +39,8 @@ describe RegistrationsController do
   end
 
   describe "GET show" do
+    it "rejects un-authenticated user"
+
     it "assigns the requested registration as @registration" do
       registration = Registration.create! valid_attributes
       get :show, :id => registration
@@ -52,6 +56,8 @@ describe RegistrationsController do
   end
 
   describe "GET edit" do
+    it "rejects un-authenticated user"
+
     it "assigns the requested registration as @registration" do
       registration = Registration.create! valid_attributes
       get :edit, :id => registration, :registration => valid_attributes
@@ -97,6 +103,8 @@ describe RegistrationsController do
   end
 
   describe "PUT update" do
+    it "rejects un-authenticated user"
+
     describe "with valid params" do
       it "updates the requested registration" do
         registration = Registration.create! valid_attributes
@@ -141,6 +149,8 @@ describe RegistrationsController do
   end
 
   describe "DELETE destroy" do
+    it "rejects un-authenticated user"
+
     it "destroys the requested registration" do
       registration = Registration.create! valid_attributes
       expect {

@@ -7,6 +7,10 @@ body		{ padding-top:60px; }
 	white-space:nowrap; 
 }
 
+/* -- over-ride for bootstrap form select input sizing -- */
+select.input-auto {
+	width:auto;
+}
 
 /* -- set rails form error styles -- */
 .field_with_errors label {
@@ -19,7 +23,7 @@ body		{ padding-top:60px; }
 	border-color:red;
 }
 
-/* -- set boostrap nav bar selected links -- */
+/* -- set bootstrap nav bar selected links -- */
 .pages.home nav a.home,
 .pages.about nav a.about,
 .pages.privacy nav a.privacy,
