@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe "registrations/index" do
   before(:each) do
+    @product = Factory(:product)
     assign(:registrations, [
       stub_model(Registration,
         :first_name => 'first_name', 
@@ -21,7 +22,7 @@ describe "registrations/index" do
         :waiver => true, 
         :parent_helper => true, 
         :volleyball => true, 
-        :product_id => 1
+        :product_id => @product.id
       ),
       stub_model(Registration,
         :first_name => 'first_name', 
@@ -41,7 +42,7 @@ describe "registrations/index" do
         :waiver => true, 
         :parent_helper => true, 
         :volleyball => true, 
-        :product_id => 1
+        :product_id => @product.id
       )
     ])
   end
@@ -67,6 +68,6 @@ describe "registrations/index" do
     assert_select "tr>td", :text => "".to_s, :count => 2
     assert_select "tr>td", :text => "".to_s, :count => 2
     assert_select "tr>td", :text => "".to_s, :count => 2
-    assert_select "tr>td", :text => 1.to_s, :count => 2
+    assert_select "tr>td", :text => @product.id.to_s, :count => 2
   end
 end
