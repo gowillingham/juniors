@@ -2,6 +2,9 @@ require 'spec_helper'
 
 describe RegistrationsController do
   before(:each) do
+    @user = Factory(:user)
+    login_user
+
     @product = Factory(:product)
   end
 
@@ -29,7 +32,11 @@ describe RegistrationsController do
   end
 
   describe "GET index" do
-    it "rejects un-authenticated user"
+    it "rejects un-authenticated user" do
+      logout_user
+      get :index
+      response.should redirect_to(signin_path)
+    end
 
     it "assigns all registrations as @registrations" do
       registration = Registration.create! valid_attributes
@@ -39,7 +46,12 @@ describe RegistrationsController do
   end
 
   describe "GET show" do
-    it "rejects un-authenticated user"
+    it "rejects un-authenticated user" do
+      registration = Registration.create! valid_attributes
+      logout_user
+      get :show, :id => registration
+      response.should redirect_to(signin_path)
+    end
 
     it "assigns the requested registration as @registration" do
       registration = Registration.create! valid_attributes
@@ -56,7 +68,12 @@ describe RegistrationsController do
   end
 
   describe "GET edit" do
-    it "rejects un-authenticated user"
+    it "rejects un-authenticated user" do
+      registration = Registration.create! valid_attributes
+      logout_user
+      get :edit, :id => registration
+      response.should redirect_to(signin_path)
+    end
 
     it "assigns the requested registration as @registration" do
       registration = Registration.create! valid_attributes
@@ -103,7 +120,13 @@ describe RegistrationsController do
   end
 
   describe "PUT update" do
-    it "rejects un-authenticated user"
+    it "rejects un-authenticated user" do
+     registration = Registration.create! valid_attributes
+     logout_user
+     put :update, :id => registration, :registration => valid_attributes
+     response.should redirect_to(signin_path)
+    end
+
 
     describe "with valid params" do
       it "updates the requested registration" do
@@ -149,7 +172,13 @@ describe RegistrationsController do
   end
 
   describe "DELETE destroy" do
-    it "rejects un-authenticated user"
+    it "rejects un-authenticated user" do
+      registration = Registration.create! valid_attributes
+      logout_user
+      delete :destroy, :id => registration
+      response.should redirect_to(signin_path)
+    end
+
 
     it "destroys the requested registration" do
       registration = Registration.create! valid_attributes
