@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe "registrations/show" do
   before(:each) do
+    @product = Factory(:product)
     @registration = assign(:registration, stub_model(Registration,
       :first_name => "",
       :last_name => "",
@@ -21,7 +22,7 @@ describe "registrations/show" do
       :waiver => "",
       :parent_helper => "",
       :volleyball => "",
-      :product_id => 1
+      :product_id => @product.id
     ))
   end
 

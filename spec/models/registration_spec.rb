@@ -32,10 +32,15 @@ describe Registration do
   end
 
   context "methods" do
-    it "responds to product" do
+    it "include .product" do
       registration = Registration.create!(@attr)
       registration.should respond_to(:product)
     end 
+
+    it "include .name" do
+      registration = Registration.create!(@attr)
+      registration.should respond_to(:name)
+    end
   end
 
   context "validations" do

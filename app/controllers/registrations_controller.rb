@@ -45,7 +45,10 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       if @registration.save
-        format.html { redirect_to @registration, notice: 'Registration was successfully created.' }
+        format.html { 
+          flash[:success] = 'Registration was successfully created. '
+          redirect_to @registration
+        }
         format.json { render json: @registration, status: :created, location: @registration }
       else
         format.html { render action: "new" }
@@ -61,7 +64,10 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       if @registration.update_attributes(params[:registration])
-        format.html { redirect_to @registration, notice: 'Registration was successfully updated.' }
+        format.html { 
+          flash[:success] = 'Registration was successfully changed. '
+          redirect_to @registration
+        }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -77,7 +83,10 @@ class RegistrationsController < ApplicationController
     @registration.destroy
 
     respond_to do |format|
-      format.html { redirect_to registrations_url }
+      format.html { 
+        flash[:success] = 'The registration was removed. '
+        redirect_to registrations_url 
+      }
       format.json { head :no_content }
     end
   end

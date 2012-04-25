@@ -1,6 +1,6 @@
 class Registration < ActiveRecord::Base
-	attr_accessible :first_name, :last_name, :parent_first_name, :parent_last_name, :email, :address, :city, :state, :zip, :phone, :tshirt_size,
-		:parent_tshirt_size, :school, :grade, :parent_helper, :waiver, :volleyball, :note, :product_id
+	attr_accessible :first_name, :last_name, :parent_first_name, :parent_last_name, :email, :email_confirmation, :address, :city, :state, :zip, 
+		:phone, :tshirt_size, :parent_tshirt_size, :school, :grade, :parent_helper, :waiver, :volleyball, :note, :product_id
 
 	belongs_to :product
 
@@ -29,4 +29,8 @@ class Registration < ActiveRecord::Base
 		:presence => { :if => :parent_helper, :message => 'required for parent helpers' }
 	validates :waiver, 
 		:acceptance => { :accept => true, :message => 'of liability must be accepted' }
+
+	def name
+		"#{first_name} #{last_name}"
+	end
 end
