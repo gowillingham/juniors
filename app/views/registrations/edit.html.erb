@@ -3,5 +3,10 @@
     <legend>Edit Registration</legend>
     <%= render 'shared/form_errors', :object => @registration %>
     <%= render 'fields', :f => f %>
+
+		<div class="form-actions">
+		  <%= f.submit nil, :class => 'btn btn-primary' %>
+		  or <%= link_to 'Cancel', registrations_path %>
+		</div>
   </fieldset>
 <% end %>

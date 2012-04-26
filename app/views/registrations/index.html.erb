@@ -22,14 +22,13 @@
       <% @registrations.each do |r| %>
         <tr>
           <td><%= r.id %></td>
-          <td><%= "#{r.last_name}, #{r.first_name}" %></td>
+          <td><%= link_to "#{r.last_name}, #{r.first_name}", r %></td>
           <td><%= r.email %></td>
           <td></td>
           <td><%= r.school %></td>
           <td><%= r.grade %></td>
           <td><%= r.product.id %></td>
           <td class="shrink">
-            <%= link_to 'Show', r, :class => 'btn btn-mini' %>
             <%= link_to 'Edit', edit_registration_path(r), :class => 'btn btn-mini'  %>
             <%= link_to 'Destroy', r, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-mini btn-danger'  %>
           </td>
