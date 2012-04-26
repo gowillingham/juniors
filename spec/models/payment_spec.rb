@@ -5,7 +5,7 @@ describe Payment do
   	@product = Factory(:product)
   	@registration = Factory(:registration, :product_id => @product.id)
   	@attr ={
-	    :registrations_id => @registration.id,
+	    :registration_id => @registration.id,
 	    :amount => 7000,
 	    :online => true,
 	    :scholarship => true,                  

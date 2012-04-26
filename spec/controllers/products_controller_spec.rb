@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe ProductsController do
   def valid_attributes
-    { :name => 'New product' }
+    { :name => 'New product' } 
   end
 
   before(:each) do

@@ -1,7 +1,7 @@
 class CreatePayments < ActiveRecord::Migration
   def change
     create_table :payments do |t|
-      t.integer :registrations_id, :null => false
+      t.integer :registration_id, :null => false
       t.integer :amount, :default => 0
       t.boolean :online, :default => false
       t.boolean :scholarship, :default => false

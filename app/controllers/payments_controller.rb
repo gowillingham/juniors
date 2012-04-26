@@ -1,4 +1,6 @@
 class PaymentsController < ApplicationController
+  before_filter :require_login
+
   # GET /payments
   # GET /payments.json
   def index

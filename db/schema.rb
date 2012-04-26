@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20120426124325) do
 
   create_table "payments", :force => true do |t|
-    t.integer  "registrations_id",                                :null => false
+    t.integer  "registration_id",                                 :null => false
     t.integer  "amount",                       :default => 0
     t.boolean  "online",                       :default => false
     t.boolean  "scholarship",                  :default => false
