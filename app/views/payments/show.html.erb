@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Registrations:</b>
+  <%= @payment.registrations_id %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @payment.amount %>
+</p>
+
+<p>
+  <b>Online:</b>
+  <%= @payment.online %>
+</p>
+
+<p>
+  <b>Scholarship:</b>
+  <%= @payment.scholarship %>
+</p>
+
+<p>
+  <b>Paypal txn:</b>
+  <%= @payment.paypal_txn_id %>
+</p>
+
+<p>
+  <b>Paypal txn type:</b>
+  <%= @payment.paypal_txn_type %>
+</p>
+
+<p>
+  <b>Paypal mc fee:</b>
+  <%= @payment.paypal_mc_fee %>
+</p>
+
+<p>
+  <b>Paypal sandbox:</b>
+  <%= @payment.paypal_sandbox %>
+</p>
+
+<p>
+  <b>Paypal payment status:</b>
+  <%= @payment.paypal_payment_status %>
+</p>
+
+<p>
+  <b>Paypal pending status reason:</b>
+  <%= @payment.paypal_pending_status_reason %>
+</p>
+
+<p>
+  <b>Paypal payment type:</b>
+  <%= @payment.paypal_payment_type %>
+</p>
+
+<p>
+  <b>Paypal verify sign:</b>
+  <%= @payment.paypal_verify_sign %>
+</p>
+
+<p>
+  <b>Paypal payer status:</b>
+  <%= @payment.paypal_payer_status %>
+</p>
+
+
+<%= link_to 'Edit', edit_payment_path(@payment) %> |
+<%= link_to 'Back', payments_path %>

@@ -1,0 +1,69 @@
+<%= form_for(@payment) do |f| %>
+  <% if @payment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@payment.errors.count, "error") %> prohibited this payment from being saved:</h2>
+
+      <ul>
+      <% @payment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :registrations_id %><br />
+    <%= f.number_field :registrations_id %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br />
+    <%= f.number_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :online %><br />
+    <%= f.check_box :online %>
+  </div>
+  <div class="field">
+    <%= f.label :scholarship %><br />
+    <%= f.check_box :scholarship %>
+  </div>
+  <div class="field">
+    <%= f.label :paypal_txn_id %><br />
+    <%= f.text_field :paypal_txn_id %>
+  </div>
+  <div class="field">
+    <%= f.label :paypal_txn_type %><br />
+    <%= f.text_field :paypal_txn_type %>
+  </div>
+  <div class="field">
+    <%= f.label :paypal_mc_fee %><br />
+    <%= f.text_field :paypal_mc_fee %>
+  </div>
+  <div class="field">
+    <%= f.label :paypal_sandbox %><br />
+    <%= f.text_field :paypal_sandbox %>
+  </div>
+  <div class="field">
+    <%= f.label :paypal_payment_status %><br />
+    <%= f.text_field :paypal_payment_status %>
+  </div>
+  <div class="field">
+    <%= f.label :paypal_pending_status_reason %><br />
+    <%= f.text_field :paypal_pending_status_reason %>
+  </div>
+  <div class="field">
+    <%= f.label :paypal_payment_type %><br />
+    <%= f.text_field :paypal_payment_type %>
+  </div>
+  <div class="field">
+    <%= f.label :paypal_verify_sign %><br />
+    <%= f.text_field :paypal_verify_sign %>
+  </div>
+  <div class="field">
+    <%= f.label :paypal_payer_status %><br />
+    <%= f.text_field :paypal_payer_status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

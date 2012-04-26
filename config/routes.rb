@@ -1,4 +1,6 @@
 Juniors::Application.routes.draw do
+  resources :payments
+
   resources :registrations
 
   resources :products

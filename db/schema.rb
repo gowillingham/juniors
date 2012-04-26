@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120424181259) do
+ActiveRecord::Schema.define(:version => 20120426124325) do
+
+  create_table "payments", :force => true do |t|
+    t.integer  "registrations_id",                                :null => false
+    t.integer  "amount",                       :default => 0
+    t.boolean  "online",                       :default => false
+    t.boolean  "scholarship",                  :default => false
+    t.string   "paypal_txn_id"
+    t.string   "paypal_txn_type"
+    t.string   "paypal_mc_fee"
+    t.string   "paypal_sandbox"
+    t.string   "paypal_payment_status"
+    t.string   "paypal_pending_status_reason"
+    t.string   "paypal_payment_type"
+    t.string   "paypal_verify_sign"
+    t.string   "paypal_payer_status"
+    t.datetime "created_at",                                      :null => false
+    t.datetime "updated_at",                                      :null => false
+  end
 
   create_table "products", :force => true do |t|
     t.string   "name"
