@@ -41,6 +41,11 @@ describe Registration do
       registration = Registration.create!(@attr)
       registration.should respond_to(:name)
     end
+
+    it "includes .payments" do
+      registration = Registration.create! @attr
+      registration.should respond_to(:payments)
+    end
   end
 
   context "validations" do
