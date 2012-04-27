@@ -45,6 +45,7 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       if @registration.save
+        @registration.payments.create!
         format.html { 
           flash[:success] = 'Registration was successfully created. '
           redirect_to @registration

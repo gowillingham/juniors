@@ -3,7 +3,7 @@ class Registration < ActiveRecord::Base
 		:phone, :tshirt_size, :parent_tshirt_size, :school, :grade, :parent_helper, :waiver, :volleyball, :note, :product_id
 
 	belongs_to :product
-	has_many :payments
+	has_many :payments, :dependent => :destroy
 
 	validates :email,
 		:confirmation => true,

@@ -7,6 +7,10 @@ body		{ padding-top:60px; }
 	white-space:nowrap; 
 }
 
+td.top-toolbar {
+	text-align:right;
+}
+
 /* -- over-ride for bootstrap form select input sizing -- */
 select.input-auto {
 	width:auto;

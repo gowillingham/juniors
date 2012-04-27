@@ -96,6 +96,11 @@ describe RegistrationsController do
         assigns(:registration).should be_persisted
       end
 
+      it "creates a payment and associates it with the registration" do
+        post :create, :registration => valid_attributes
+        assigns(:registration).payments.any?.should be_true
+      end
+
       it "redirects to the created registration" do
         post :create, :registration => valid_attributes
         response.should redirect_to(Registration.last)

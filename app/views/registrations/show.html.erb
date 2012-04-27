@@ -6,6 +6,13 @@
 <table class="table table-bordered">
   <tbody>
     <tr>
+      <td class="form-actions top-toolbar" colspan="2">
+        <%= link_to 'All registrations', registrations_path, :class => 'btn' %>
+        <%= link_to 'Edit', edit_registration_path(@registration), :class => 'btn' %>
+        <%= link_to 'Destroy', registration_path(@registration), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+      </td>
+    </tr>
+    <tr>
       <td class="shrink"><strong>#:</strong> </td>
       <td><%= @registration.id %></td>
     </tr>
@@ -80,13 +87,6 @@
     <tr>
       <td class="shrink"><strong>Volleyball:</strong> </td>
       <td><%= @registration.volleyball %></td>
-    </tr>
-    <tr>
-      <td class="form-actions" colspan="2">
-        <%= link_to 'All registrations', registrations_path, :class => 'btn' %>
-        <%= link_to 'Edit', edit_registration_path(@registration), :class => 'btn' %>
-        <%= link_to 'Destroy', registration_path(@registration), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
-      </td>
     </tr>
   <tbody>
 </table>
