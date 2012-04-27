@@ -31,6 +31,10 @@ class Registration < ActiveRecord::Base
 	validates :waiver, 
 		:acceptance => { :accept => true, :message => 'of liability must be accepted' }
 
+	def balance
+		self.product.price - self.payments.inject(0) { |sum, payment| sum + payment.amount }
+	end
+
 	def name
 		"#{first_name} #{last_name}"
 	end

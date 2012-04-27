@@ -46,6 +46,16 @@ describe Registration do
       registration = Registration.create! @attr
       registration.should respond_to(:payments)
     end
+
+    context ".balance" do
+      it "returns the balance of the product minus any payments" do
+        product = Factory(:product, :price => 5000)
+        registration = Registration.create! @attr.merge(:product_id => product.id)
+        registration.payments.create!(:amount => 1000)
+        registration.payments.create!(:amount => 2000)
+        registration.balance.should eq(2000) 
+      end
+    end
   end
 
   context "validations" do
