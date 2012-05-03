@@ -55,19 +55,6 @@ describe PaymentsController do
     end
   end
 
-  describe "GET new" do
-    it "should reject un-authenticated access" do
-      logout_user
-      get :new
-      response.should redirect_to(signin_path)
-    end
-
-    it "assigns a new payment as @payment" do
-      get :new
-      assigns(:payment).should be_a_new(Payment)
-    end
-  end
-
   describe "GET edit" do
     it "should reject un-authenticated access" do
       logout_user
@@ -83,48 +70,6 @@ describe PaymentsController do
     end
   end
 
-  describe "POST create" do
-    it "should reject un-authenticated access" do
-      logout_user
-      post :create, :payment => valid_attributes
-      response.should redirect_to(signin_path)
-    end
-
-    describe "with valid params" do
-      it "creates a new Payment" do
-        expect {
-          post :create, :payment => valid_attributes
-        }.to change(Payment, :count).by(1)
-      end
-
-      it "assigns a newly created payment as @payment" do
-        post :create, :payment => valid_attributes
-        assigns(:payment).should be_a(Payment)
-        assigns(:payment).should be_persisted
-      end
-
-      it "redirects to the created payment" do
-        post :create, :payment => valid_attributes
-        response.should redirect_to(Payment.last)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved payment as @payment" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Payment.any_instance.stub(:save).and_return(false)
-        post :create, :payment => {}
-        assigns(:payment).should be_a_new(Payment)
-      end
-
-      it "re-renders the 'new' template" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Payment.any_instance.stub(:save).and_return(false)
-        post :create, :payment => {}
-        response.should render_template("new")
-      end
-    end
-  end
 
   describe "PUT update" do
     it "should reject un-authenticated access" do

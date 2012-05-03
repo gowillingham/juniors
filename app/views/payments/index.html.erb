@@ -24,7 +24,6 @@
         <td><%= payment.scholarship? %></td>
         <td class="shrink">
           <%= link_to 'Edit', edit_payment_path(payment), :class => 'btn btn-mini' %>
-          <%= link_to 'Destroy', payment, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
     <% end %>

@@ -23,36 +23,9 @@ class PaymentsController < ApplicationController
     end
   end
 
-  # GET /payments/new
-  # GET /payments/new.json
-  def new
-    @payment = Payment.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @payment }
-    end
-  end
-
   # GET /payments/1/edit
   def edit
     @payment = Payment.find(params[:id])
-  end
-
-  # POST /payments
-  # POST /payments.json
-  def create
-    @payment = Payment.new(params[:payment])
-
-    respond_to do |format|
-      if @payment.save
-        format.html { redirect_to @payment, notice: 'Payment was successfully created.' }
-        format.json { render json: @payment, status: :created, location: @payment }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @payment.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   # PUT /payments/1

@@ -26,6 +26,6 @@ describe "products/index" do
     assert_select "tr>td", :text => "Name".to_s, :count => 2
     assert_select "tr>td", :text => "Category".to_s, :count => 2
     assert_select "tr>td", :text => false.to_s, :count => 2
-    assert_select "tr>td", :text => 3500.to_s, :count => 2
+    assert_select "tr>td", :text => dollarify(3500).to_s, :count => 2
   end
 end
