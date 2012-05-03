@@ -18,8 +18,8 @@
       <td><%= @product.description %></td>
     </tr>
     <tr>
-      <td class="shrink"><strong>Price (in cents):</strong> </td>
-      <td><%= @product.price %></td>
+      <td class="shrink"><strong>Price:</strong> </td>
+      <td><%= dollarify @product.price %></td>
     </tr>
     <tr>
       <td class="shrink"><strong>Category:</strong> </td>

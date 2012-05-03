@@ -2,9 +2,11 @@ require 'spec_helper'
 
 describe "payments/index" do
   before(:each) do
+    @product = Factory(:product)
+    @registration = Factory(:registration, :product_id => @product.id)
     assign(:payments, [
       stub_model(Payment,
-        :registrations_id => 1,
+        :registration_id => @registration.id,
         :amount => 2,
         :online => true,
         :scholarship => false,
@@ -19,7 +21,7 @@ describe "payments/index" do
         :paypal_payer_status => "Paypal Payer Status"
       ),
       stub_model(Payment,
-        :registrations_id => 1,
+        :registration_id => @registration.id,
         :amount => 2,
         :online => true,
         :scholarship => false,
@@ -39,18 +41,9 @@ describe "payments/index" do
   it "renders a list of payments" do
     render
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "tr>td", :text => 1.to_s, :count => 2
-    assert_select "tr>td", :text => 2.to_s, :count => 2
+    assert_select "tr>td", :text => @registration.id.to_s, :count => 2
+    assert_select "tr>td", :text => dollarify(2).to_s, :count => 2
     assert_select "tr>td", :text => false.to_s, :count => 2
     assert_select "tr>td", :text => false.to_s, :count => 2
-    assert_select "tr>td", :text => "Paypal Txn".to_s, :count => 2
-    assert_select "tr>td", :text => "Paypal Txn Type".to_s, :count => 2
-    assert_select "tr>td", :text => "Paypal Mc Fee".to_s, :count => 2
-    assert_select "tr>td", :text => "Paypal Sandbox".to_s, :count => 2
-    assert_select "tr>td", :text => "Paypal Payment Status".to_s, :count => 2
-    assert_select "tr>td", :text => "Paypal Pending Status Reason".to_s, :count => 2
-    assert_select "tr>td", :text => "Paypal Payment Type".to_s, :count => 2
-    assert_select "tr>td", :text => "Paypal Verify Sign".to_s, :count => 2
-    assert_select "tr>td", :text => "Paypal Payer Status".to_s, :count => 2
   end
 end

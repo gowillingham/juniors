@@ -1,47 +1,33 @@
-<h1>Listing payments</h1>
+<div class="page-header">
+  <h1>Payments</h1>
+</div>
 
-<table>
-  <tr>
-    <th>Registrations</th>
-    <th>Amount</th>
-    <th>Online</th>
-    <th>Scholarship</th>
-    <th>Paypal txn</th>
-    <th>Paypal txn type</th>
-    <th>Paypal mc fee</th>
-    <th>Paypal sandbox</th>
-    <th>Paypal payment status</th>
-    <th>Paypal pending status reason</th>
-    <th>Paypal payment type</th>
-    <th>Paypal verify sign</th>
-    <th>Paypal payer status</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @payments.each do |payment| %>
-  <tr>
-    <td><%= payment.registrations_id %></td>
-    <td><%= payment.amount %></td>
-    <td><%= payment.online %></td>
-    <td><%= payment.scholarship %></td>
-    <td><%= payment.paypal_txn_id %></td>
-    <td><%= payment.paypal_txn_type %></td>
-    <td><%= payment.paypal_mc_fee %></td>
-    <td><%= payment.paypal_sandbox %></td>
-    <td><%= payment.paypal_payment_status %></td>
-    <td><%= payment.paypal_pending_status_reason %></td>
-    <td><%= payment.paypal_payment_type %></td>
-    <td><%= payment.paypal_verify_sign %></td>
-    <td><%= payment.paypal_payer_status %></td>
-    <td><%= link_to 'Show', payment %></td>
-    <td><%= link_to 'Edit', edit_payment_path(payment) %></td>
-    <td><%= link_to 'Destroy', payment, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Regis #:</th>
+      <th>Player name</th>
+      <th>Amount</th>
+      <th>Online</th>
+      <th>Scholarship</th>
+      <th></th>
+    </tr>
+  </thead>
+<% if @payments.any? %>
+  <tbody>
+    <% @payments.each do |payment| %>
+      <tr>
+        <td><%= link_to payment.registration_id, registration_path(payment.registration_id) %></td>
+        <td><%= payment.registration.name %></td>
+        <td><%= dollarify payment.amount %></td>
+        <td><%= payment.online? %></td>
+        <td><%= payment.scholarship? %></td>
+        <td class="shrink">
+          <%= link_to 'Edit', edit_payment_path(payment), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', payment, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Payment', new_payment_path %>
