@@ -2,8 +2,10 @@ require 'spec_helper'
 
 describe "payments/show" do
   before(:each) do
+    @product = Factory(:product)
+    @registration = Factory(:registration, :product_id => @product.id)
     @payment = assign(:payment, stub_model(Payment,
-      :registrations_id => 1,
+      :registration_id => @registration.id,
       :amount => 2,
       :online => false,
       :scholarship => false,
@@ -22,7 +24,7 @@ describe "payments/show" do
   it "renders attributes in <p>" do
     render
     # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/1/)
+    rendered.should match(/#{@registration.id}/)
     rendered.should match(/2/)
     rendered.should match(/false/)
     rendered.should match(/false/)

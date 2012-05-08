@@ -29,6 +29,7 @@
           <td><%= r.grade %></td>
           <td><%= r.product.id %></td>
           <td class="shrink">
+            <%= link_to 'Payment', r.payments.first, :class => 'btn btn-mini' %>
             <%= link_to 'Edit', edit_registration_path(r), :class => 'btn btn-mini'  %>
             <%= link_to 'Destroy', r, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-mini btn-danger'  %>
           </td>

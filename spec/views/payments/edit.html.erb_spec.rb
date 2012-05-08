@@ -20,23 +20,14 @@ describe "payments/edit" do
   end
 
   it "renders the edit payment form" do
+    controller.stub!(:action_name).and_return("Edit")
     render
 
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "form", :action => payments_path(@payment), :method => "post" do
-      assert_select "input#payment_registration_id", :name => "payment[registrations_id]"
       assert_select "input#payment_amount", :name => "payment[amount]"
       assert_select "input#payment_online", :name => "payment[online]"
       assert_select "input#payment_scholarship", :name => "payment[scholarship]"
-      assert_select "input#payment_paypal_txn_id", :name => "payment[paypal_txn_id]"
-      assert_select "input#payment_paypal_txn_type", :name => "payment[paypal_txn_type]"
-      assert_select "input#payment_paypal_mc_fee", :name => "payment[paypal_mc_fee]"
-      assert_select "input#payment_paypal_sandbox", :name => "payment[paypal_sandbox]"
-      assert_select "input#payment_paypal_payment_status", :name => "payment[paypal_payment_status]"
-      assert_select "input#payment_paypal_pending_status_reason", :name => "payment[paypal_pending_status_reason]"
-      assert_select "input#payment_paypal_payment_type", :name => "payment[paypal_payment_type]"
-      assert_select "input#payment_paypal_verify_sign", :name => "payment[paypal_verify_sign]"
-      assert_select "input#payment_paypal_payer_status", :name => "payment[paypal_payer_status]"
     end
   end
 end

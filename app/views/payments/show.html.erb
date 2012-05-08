@@ -1,70 +1,74 @@
-<p id="notice"><%= notice %></p>
+<%= render 'shared/show_flash' %>
 
-<p>
-  <b>Registrations:</b>
-  <%= @payment.registrations_id %>
-</p>
-
-<p>
-  <b>Amount:</b>
-  <%= @payment.amount %>
-</p>
-
-<p>
-  <b>Online:</b>
-  <%= @payment.online %>
-</p>
-
-<p>
-  <b>Scholarship:</b>
-  <%= @payment.scholarship %>
-</p>
-
-<p>
-  <b>Paypal txn:</b>
-  <%= @payment.paypal_txn_id %>
-</p>
-
-<p>
-  <b>Paypal txn type:</b>
-  <%= @payment.paypal_txn_type %>
-</p>
-
-<p>
-  <b>Paypal mc fee:</b>
-  <%= @payment.paypal_mc_fee %>
-</p>
-
-<p>
-  <b>Paypal sandbox:</b>
-  <%= @payment.paypal_sandbox %>
-</p>
-
-<p>
-  <b>Paypal payment status:</b>
-  <%= @payment.paypal_payment_status %>
-</p>
-
-<p>
-  <b>Paypal pending status reason:</b>
-  <%= @payment.paypal_pending_status_reason %>
-</p>
-
-<p>
-  <b>Paypal payment type:</b>
-  <%= @payment.paypal_payment_type %>
-</p>
-
-<p>
-  <b>Paypal verify sign:</b>
-  <%= @payment.paypal_verify_sign %>
-</p>
-
-<p>
-  <b>Paypal payer status:</b>
-  <%= @payment.paypal_payer_status %>
-</p>
-
-
-<%= link_to 'Edit', edit_payment_path(@payment) %> |
-<%= link_to 'Back', payments_path %>
+<div class="page-header">
+  <h1>Payment details for registration #<%= @payment.registration.id %></h1>
+</div>
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <td class="shrink"><strong>Registration for:</strong> </td>
+      <td><%= @payment.registration.name %></td>
+    </tr>
+      <td class="shrink"><strong>Product:</strong> </td>
+      <td><%= @payment.registration.product.name %></td>
+    </tr>
+    <tr>
+      <td class="shrink"><strong>created_at:</strong> </td>
+      <td><%= @payment.created_at %></td>
+    </tr>
+    <tr>
+      <td class="shrink"><strong>Amount:</strong> </td>
+      <td><%= dollarify @payment.amount %></td>
+    </tr>
+    <tr>
+      <td class="shrink"><strong>Online:</strong> </td>
+      <td><%= @payment.online? %></td>
+    </tr>
+    <tr>
+      <td class="shrink"><strong>Scholarship:</strong> </td>
+      <td><%= @payment.scholarship? %></td>
+    </tr>
+    <tr>
+      <td class="shrink"><strong>paypal_txn_id:</strong> </td>
+      <td><%= @payment.paypal_txn_id %></td>
+    </tr>
+    <tr>
+      <td class="shrink"><strong>paypal_txn_type:</strong> </td>
+      <td><%= @payment.paypal_txn_type %></td>
+    </tr>
+    <tr>
+      <td class="shrink"><strong>paypal_mc_fee:</strong> </td>
+      <td><%= @payment.paypal_mc_fee %></td>
+    </tr>
+    <tr>
+      <td class="shrink"><strong>paypal_sandbox:</strong> </td>
+      <td><%= @payment.paypal_sandbox %></td>
+    </tr>
+    <tr>
+      <td class="shrink"><strong>paypal_payment_type:</strong> </td>
+      <td><%= @payment.paypal_payment_type %></td>
+    </tr>
+    <tr>
+      <td class="shrink"><strong>paypal_payment_status:</strong> </td>
+      <td><%= @payment.paypal_payment_status %></td>
+    </tr>
+    <tr>
+      <td class="shrink"><strong>paypal_pending_status_reason:</strong> </td>
+      <td><%= @payment.paypal_pending_status_reason %></td>
+    </tr>
+    <tr>
+      <td class="shrink"><strong>paypal_payer_status:</strong> </td>
+      <td><%= @payment.paypal_payer_status %></td>
+    </tr>
+    <tr>
+      <td class="shrink"><strong>paypal_verify_sign:</strong> </td>
+      <td><%= @payment.paypal_verify_sign %></td>
+    </tr>
+    <tr>
+      <td class="form-actions" colspan="2">
+        <%= link_to 'All registrations', registrations_path, :class => 'btn' %>
+        <%= link_to 'Edit', edit_payment_path(@payment), :class => 'btn' %>
+      </td>
+    </tr>
+  </tbody>
+</table>
