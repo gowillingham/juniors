@@ -24,6 +24,7 @@ describe "registrations/show" do
       :volleyball => "",
       :product_id => @product.id
     ))
+    @payment = Factory(:payment, :registration_id => @registration.id)
   end
 
   it "renders attributes in <p>" do

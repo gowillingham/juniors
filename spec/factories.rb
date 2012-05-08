@@ -40,3 +40,9 @@ Factory.define :registration do |registration|
   registration.volleyball						true						
 end
 
+Factory.define :payment do |payment|
+  payment.amount         0
+  payment.online         false
+  payment.scholarship    false
+end
+

@@ -37,9 +37,14 @@ describe Registration do
       registration.should respond_to(:product)
     end 
 
-    it "include .name" do
+    it "includes .name" do
       registration = Registration.create!(@attr)
       registration.should respond_to(:name)
+    end
+
+    it "includes .parent_name" do
+      registration = Registration.create!(@attr)
+      registration.should respond_to(:parent_name)
     end
 
     it "includes .payments" do
