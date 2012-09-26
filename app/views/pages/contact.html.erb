@@ -1,2 +1,17 @@
-<h1>Contact us</h1>
-<p>Find me in app/views/pages/contact.html.erb</p>
+<% content_for :title, "Contact #{APP_SHORT_NAME}" %>
+
+<h1 class="page-header"><%= yield :title %></h1>
+<address>
+	<strong><%= APP_LONG_NAME %></strong><br>
+	<%= APP_ADDRESS[:street] %><br>
+	<%= APP_ADDRESS[:city_state_zip] %><br>	
+</address>
+<address>
+	<strong>Phone</strong><br>
+	<%= APP_PHONE %><br>
+</address>
+<address>
+	<strong>Email</strong><br>
+	<%= mail_to INFO_EMAIL_ADDRESS %><br>
+</address>
+

@@ -8,9 +8,6 @@ INHOUSE_LEAGUE_SESSION_GRID = [
   ["Sat, Jun 4", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", "Tournament!"],
 ]
 
-
-
-
 APP_LONG_NAME = "Lakeville Junior Volleyball"
 APP_SHORT_NAME = "Lakeville Juniors"
 APP_HOST_NAME = "lakevillejuniors.com"
@@ -28,7 +25,7 @@ APP_ADDRESS = {
   :street => '21266 Inspiration Path',
   :city_state_zip => 'Lakeville, MN 55044'
 }
-APP_PHONE = '952-431-6341'
+APP_PHONE = '(952) 431-6341'
 
 SCHOOL_OPTIONS = [
   ['All Saints', 'ASE'], 
