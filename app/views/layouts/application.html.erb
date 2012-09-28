@@ -20,9 +20,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </a>
-	      <a class="brand" href="#">
-	      	Lakeville Juniors
-	      </a>
+	      <a class="brand" href="#"><%= APP_SHORT_NAME %></a>
 	      <div class="nav-collapse">
 	        <ul class="nav">
 	          <li><%= link_to "Home", root_path, :class => :home %></li>
@@ -45,6 +43,7 @@
 	<div class="container">
     <div class="row">
       <div class="span9"><%= yield %></div>
+
       <div class="span3">
 				<ul class="thumbnails">
 				  <li class="span3">
@@ -62,13 +61,25 @@
 	      		<li><%= link_to 'Payments', payments_path, :class => '' %></li>
 	      	</ul>
       	<% end %>
-        <h2>About Us</h2>
-        <p>
-		      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		    </p>
+        <h3>Volleyball links</h3>
+        <ul class="unstyled">
+        	<li><%= link_to 'Lakeville South Juniors', "http://www.lakevillesouthjuniors.com/", :target => '_blank' %></li>
+        	<li><%= link_to 'Lakeville North Juniors', "http://www.lakevillenorthjuniors.com/", :target => '_blank' %></li>
+        	<li><%= link_to 'USA Volleyball', "http://www.teamusa.org/USA-Volleyball.aspx/", :target => '_blank' %></li>
+        	<li><%= link_to 'North Country region (USAV)', "http://www.ncrusav.org/", :target => '_blank' %></li>
+        	<li><%= link_to 'Lakeville Panthers', "http://www.ihigh.com/lakevillenorthvolleyball/", :target => '_blank' %></li>
+        	<li><%= link_to 'Lakeville Cougars', "http://southvolleyball.ihigh.com/", :target => '_blank' %></li>
+        </ul>
       </div>
     </div>
-  </div>
+
+	  <footer class="footer">
+	  	<div class="container">
+    	<hr />
+    	<p><%= "Copyright #{Time.now.year} - #{APP_LONG_NAME}, Inc." %></p>
+	  </footer>
+	</div>
+
 
 </body>
 </html>
