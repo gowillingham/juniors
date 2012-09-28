@@ -11,7 +11,7 @@ gem 'faker'
 gem 'sorcery'
 gem 'mailcatcher'
 gem 'activemerchant'
-gem 'heroku'
+# gem 'heroku'
 
 group :development, :test do
   gem "rspec-rails", ">= 2.5.0"
