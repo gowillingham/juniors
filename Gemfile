@@ -9,11 +9,11 @@ gem 'pg'
 
 gem 'faker'
 gem 'sorcery'
-gem 'mailcatcher'
 gem 'activemerchant'
 
 group :development, :test do
   gem "rspec-rails", ">= 2.5.0"
+  gem 'mailcatcher'
 end
 
 group :production do
