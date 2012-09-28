@@ -5,7 +5,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :description
       t.string :category
       t.boolean :enabled
-      t.string :price
+      t.integer :price
 
       t.timestamps
     end

@@ -35,10 +35,10 @@ ActiveRecord::Schema.define(:version => 20120426124325) do
     t.string   "name"
     t.string   "description"
     t.string   "category"
-    t.boolean  "enabled",                    :default => true
-    t.integer  "price",       :limit => 255, :default => 0
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
+    t.boolean  "enabled",     :default => true
+    t.integer  "price",       :default => 0
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "registrations", :force => true do |t|

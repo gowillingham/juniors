@@ -5,7 +5,5 @@ class AddDefaultsToEnabledAndPriceForProducts < ActiveRecord::Migration
 	end
 
 	def self.down
-		change_column :products, :enabled, :boolean, :default => :nil
-		change_column :products, :price, :integer, :default => :nil
 	end
 end
