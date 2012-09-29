@@ -206,5 +206,6 @@ DEPENDENCIES
   rspec-rails (>= 2.5.0)
   sass-rails (~> 3.2.3)
   sorcery
+  thin
   uglifier (>= 1.0.3)
   webrat (= 0.7.3)

@@ -10,6 +10,7 @@ gem 'pg'
 gem 'faker'
 gem 'sorcery'
 gem 'activemerchant'
+gem 'thin'
 
 group :development, :test do
   gem "rspec-rails", ">= 2.5.0"
