@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     	flash[:success] = 'Logged in!'
       redirect_back_or_to root_url
     else
-      flash[:error] = "Your email and password did not match any account"
+      flash.now[:error] = "Your email and password did not match any account"
       render 'new'
     end
   end
