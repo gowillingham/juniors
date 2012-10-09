@@ -54,13 +54,13 @@ describe SessionsController do
   describe "POST 'destroy'" do
     it "should logout the user" do
       login_user
-      post :destroy
+      post :destroy, :id => @user
       controller.should_not be_logged_in
     end
 
     it "should redirect to site index" do
       login_user
-      post :destroy
+      post :destroy, :id => @user
       response.should redirect_to(root_path)
       flash[:notice] = 'Logged out!'
     end

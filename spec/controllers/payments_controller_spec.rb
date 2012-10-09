@@ -44,7 +44,8 @@ describe PaymentsController do
   describe "GET show" do
     it "should reject un-authenticated access" do
       logout_user
-      get :show
+      payment = Payment.create! valid_attributes
+      get :show, :id => payment
       response.should redirect_to(signin_path)
     end
 

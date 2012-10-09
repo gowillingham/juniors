@@ -38,7 +38,8 @@ describe UsersController do
   describe "GET show" do
     it "should reject unauthenticated user" do
       logout_user
-      get :show
+      user = User.create! valid_attributes
+      get :show, :id => user
       response.should redirect_to(signin_path)
     end
 
@@ -65,7 +66,8 @@ describe UsersController do
   describe "GET edit" do
     it "should reject unauthenticated user" do
       logout_user
-      get :edit
+      user = User.create! valid_attributes
+      get :edit, :id => user
       response.should redirect_to(signin_path)
     end
 
