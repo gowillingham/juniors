@@ -26,6 +26,7 @@ describe "Products" do
         end.should change(Product, :count).by(1)
       end
     end
+    
     describe "failure" do
       it "should not create a product" do
         lambda do

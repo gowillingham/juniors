@@ -46,11 +46,11 @@ describe RegistrationsController do
   end
 
   describe "GET show" do
-    it "rejects un-authenticated user" do
+    it "allows un-authenticated user" do
       registration = Registration.create! valid_attributes
       logout_user
       get :show, :id => registration
-      response.should redirect_to(signin_path)
+      response.should be_success
     end
 
     it "assigns the requested registration as @registration" do

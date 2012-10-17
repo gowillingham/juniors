@@ -1,5 +1,5 @@
 class RegistrationsController < ApplicationController
-  before_filter :require_login, :except => [:new, :create]
+  before_filter :require_login, :except => [:new, :show, :create]
   # GET /registrations
   # GET /registrations.json
   def index

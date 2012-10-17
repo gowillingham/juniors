@@ -7,12 +7,12 @@ gem 'rails', '3.2.2'
 
 gem 'pg'
 
-gem 'faker'
 gem 'sorcery'
 gem 'activemerchant'
 gem 'thin'
 
 group :development, :test do
+  gem 'faker'
   gem "rspec-rails", ">= 2.5.0"
   gem 'mailcatcher'
 end
