@@ -15,6 +15,7 @@ group :development, :test do
   gem 'faker'
   gem "rspec-rails", ">= 2.5.0"
   gem 'mailcatcher'
+  gem 'launchy'
 end
 
 group :production do
