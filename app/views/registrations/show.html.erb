@@ -3,36 +3,38 @@
 <div class="page-header">
   <h1>Details for <%= @registration.name %></h1>
 </div>
-<div class="alert alert-info">
-  <table class="nested">
-    <tbody>
-      <tr>
-        <td class=""><strong>Payment #: <strong></td>
-        <td><%= @registration.payments.first.id %></td>
-      </tr>
-      <tr>
-        <td class=""><strong>Online: <strong></td>
-        <td><%= @registration.payments.first.online? %></td>
-      </tr>
-      <tr>
-        <td class=""><strong>Scholarship: <strong></td>
-        <td><%= @registration.payments.first.scholarship? %></td>
-      </tr>
-      <tr>
-        <td class=""><strong>Paypal txn id: <strong></td>
-        <td><%= @registration.payments.first.paypal_txn_id %></td>
-      </tr>
-      <tr>
-        <td class=""><strong>Amount: <strong></td>
-        <td><%= dollarify @registration.payments.first.amount %></td>
-      </tr>
-      <tr>
-        <td class=""><strong>Balance: <strong></td>
-        <td><%= dollarify (@registration.product.price - @registration.payments.first.amount) %></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<% if @registration.payments.any? %>
+  <div class="alert alert-info">
+    <table class="nested">
+      <tbody>
+        <tr>
+          <td class=""><strong>Payment #: <strong></td>
+          <td><%= @registration.payments.first.id %></td>
+        </tr>
+        <tr>
+          <td class=""><strong>Online: <strong></td>
+          <td><%= @registration.payments.first.online? %></td>
+        </tr>
+        <tr>
+          <td class=""><strong>Scholarship: <strong></td>
+          <td><%= @registration.payments.first.scholarship? %></td>
+        </tr>
+        <tr>
+          <td class=""><strong>Paypal txn id: <strong></td>
+          <td><%= @registration.payments.first.paypal_txn_id %></td>
+        </tr>
+        <tr>
+          <td class=""><strong>Amount: <strong></td>
+          <td><%= dollarify @registration.payments.first.amount %></td>
+        </tr>
+        <tr>
+          <td class=""><strong>Balance: <strong></td>
+          <td><%= dollarify (@registration.product.price - @registration.payments.first.amount) %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<% end %>
 <table class="table table-bordered">
   <tbody>
     <tr>

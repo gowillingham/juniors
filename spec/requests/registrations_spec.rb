@@ -110,17 +110,25 @@ describe "Registrations" do
 				fill_in 'registration_email_confirmation', :with => @registration.email
 				fill_in 'registration_product_id', :with => @registration.product.id
 				click_button
-
-				response.should have_selector('.booger')
-
-
 				response.should render_template('registrations/show') 
+        response.should have_selector('p.alert-success', :content => 'successfully changed')
+        @registration.reload.first_name.should eq('the_new_name')
 			end
 		end
 
 		describe "failure" do
-			it "should not update the product attributes"
+			it "should not update the product attributes" do
+				visit edit_registration_path(@registration)
+				fill_in 'registration_first_name', :with => nil
+				fill_in 'registration_email_confirmation', :with => @registration.email
+				fill_in 'registration_product_id', :with => @registration.product.id
+				click_button
+
+				response.should render_template('registrations/edit')
+				response.should have_selector('div.alert-error')
+				@registration.reload.first_name.should eq('first_name')
+				@registration.reload.email.should eq('gowillingham@gmail.com')
+			end
 		end
 	end
-
 end
