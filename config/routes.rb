@@ -1,5 +1,9 @@
 Juniors::Application.routes.draw do
-  resources :payments
+  resources :payments do
+    member do
+      get 'paypal'
+    end
+  end
 
   resources :registrations
 

@@ -45,12 +45,19 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       if @registration.save
-        @registration.payments.create!
-        format.html { 
-          flash[:success] = 'Registration was successfully created. '
-          redirect_to @registration
-        }
-        format.json { render json: @registration, status: :created, location: @registration }
+
+        @payment = @registration.payments.create!
+        if logged_in?
+          format.html { 
+            flash[:success] = 'Registration was successfully created. '
+            redirect_to @registration
+          }
+          format.json { render json: @registration, status: :created, location: @registration }
+        else
+          format.html {
+            redirect_to paypal_payment_url(@payment)
+          }
+        end
       else
         format.html { render action: "new" }
         format.json { render json: @registration.errors, status: :unprocessable_entity }

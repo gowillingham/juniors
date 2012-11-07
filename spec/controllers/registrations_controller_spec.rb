@@ -84,6 +84,23 @@ describe RegistrationsController do
 
   describe "POST create" do
     describe "with valid params" do
+
+      describe "and authenticated user" do
+
+        it "redirects to the created registration" do
+          post :create, :registration => valid_attributes
+          response.should redirect_to(Registration.last)
+        end
+      end
+
+      describe "and un-authenticated user" do
+        it "redirects to payments#paypal" do
+          logout_user
+          post :create, :registration => valid_attributes
+          response.should redirect_to(paypal_payment_path(assigns(:registration).payments.first))
+        end
+      end
+
       it "creates a new Registration" do
         expect {
           post :create, :registration => valid_attributes
@@ -99,11 +116,6 @@ describe RegistrationsController do
       it "creates a payment and associates it with the registration" do
         post :create, :registration => valid_attributes
         assigns(:registration).payments.any?.should be_true
-      end
-
-      it "redirects to the created registration" do
-        post :create, :registration => valid_attributes
-        response.should redirect_to(Registration.last)
       end
     end
 
