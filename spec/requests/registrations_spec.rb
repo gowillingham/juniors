@@ -32,8 +32,8 @@ describe "Registrations" do
 					check 'Include lite volleyball?'
 					click_button
 
-					response.should render_template('registrations/show')
-					response.should have_selector('p.alert-success', :content => 'Registration was successfully created.')
+					response.should render_template('payments/paypal')
+					response.should have_selector('h1', :content => 'Confirm your payment')
 				end.should change(Registration, :count).by(1)
 			end
 		end

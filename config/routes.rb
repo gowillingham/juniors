@@ -2,6 +2,7 @@ Juniors::Application.routes.draw do
   resources :payments do
     member do
       get 'paypal'
+      post 'ipn'
     end
   end
 
@@ -17,6 +18,7 @@ Juniors::Application.routes.draw do
 
   resources :users
   resources :sessions, :only => [:create, :destroy]
+
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

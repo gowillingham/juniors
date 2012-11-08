@@ -1,5 +1,12 @@
 class PaymentsController < ApplicationController
-  before_filter :require_login
+  include ActiveMerchant::Billing::Integrations
+
+  before_filter :require_login, :except => [:paypal]
+
+  def paypal
+    @payment = Payment.find params[:id]
+    @registration = @payment.registration
+  end 
 
   # GET /payments
   # GET /payments.json
