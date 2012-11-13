@@ -1,54 +1,54 @@
 <div class="control-group">
-  <%= f.label :product_id, 'Which session?', :class => 'control-label' %>
+  <%= f.label :product_id, requirify('Which session?'), :class => 'control-label' %>
   <div class="controls">
     <%= f.select :product_id, Product.find(:all, :conditions => ['category =?', 'inhouse']).map { |p| [p.name, p.id] }, { :prompt => '' }, :class => 'input-auto' %>
   </div>
 </div>
 
 <div class="control-group">
-  <%= f.label :first_name, 'Player first name', :class => 'control-label' %>
+  <%= f.label :first_name, requirify('Player first name'), :class => 'control-label' %>
   <div class="controls">
     <%= f.text_field :first_name %>
   </div>
 </div>
 
 <div class="control-group">
-  <%= f.label :last_name, 'Player last name', :class => 'control-label' %>
+  <%= f.label :last_name, requirify('Player last name'), :class => 'control-label' %>
   <div class="controls">
     <%= f.text_field :last_name %>
   </div>
 </div>
 
 <div class="control-group">
-  <%= f.label :parent_first_name, :class => 'control-label' %>
+  <%= f.label :parent_first_name, requirify('Parent first name'), :class => 'control-label' %>
   <div class="controls">
     <%= f.text_field :parent_first_name %>
   </div>
 </div>
 
 <div class="control-group">
-  <%= f.label :parent_last_name, :class => 'control-label' %>
+  <%= f.label :parent_last_name, requirify('Parent last name'), :class => 'control-label' %>
   <div class="controls">
     <%= f.text_field :parent_last_name %>
   </div>
 </div>
 
 <div class="control-group">
-  <%= f.label :email, :class => 'control-label' %>
+  <%= f.label :email, requirify('Contact email'), :class => 'control-label' %>
   <div class="controls">
     <%= f.text_field :email %>
   </div>
 </div>
 
 <div class="control-group">
-  <%= f.label :email_confirmation, 'Confirm email', :class => 'control-label' %>
+  <%= f.label :email_confirmation, requirify('Confirm email'), :class => 'control-label' %>
   <div class="controls">
     <%= f.text_field :email_confirmation %>
   </div>
 </div>
 
 <div class="control-group">
-  <%= f.label :phone, :class => 'control-label' %>
+  <%= f.label :phone, requirify('Phone'), :class => 'control-label' %>
   <div class="controls">
     <%= f.text_field :phone %>
   </div>
@@ -83,21 +83,21 @@
 </div>
 
 <div class="control-group">
-  <%= f.label :tshirt_size, :class => 'control-label' %>
+  <%= f.label :tshirt_size, requirify('Tshirt size'), :class => 'control-label' %>
   <div class="controls">
       <%= f.select :tshirt_size, SIZE_OPTIONS, { :prompt => '' }, :class => 'input-auto' %>
   </div>
 </div>
 
 <div class="control-group">
-  <%= f.label :school, :class => 'control-label' %>
+  <%= f.label :school, requirify('School'), :class => 'control-label' %>
   <div class="controls">
     <%= f.select :school, SCHOOL_OPTIONS, { :prompt => '' }, :class => 'input-auto' %>
   </div>
 </div>
 
 <div class="control-group">
-  <%= f.label :grade, :class => 'control-label' %>
+  <%= f.label :grade, requirify('Grade'), :class => 'control-label' %>
   <div class="controls">
     <%= f.select :grade, GRADE_OPTIONS, { :prompt => '' }, :class => 'input-mini' %>
   </div>
@@ -128,7 +128,7 @@
 <div class="control-group">
   <div class="controls">
     <%= f.label :waiver, :class => 'checkbox' do %>
-      <%= f.check_box :waiver %> Read and agree to waiver?
+      <%= f.check_box :waiver %> <%= requirify 'Read and agree to waiver?' %>
     <% end %>
   </div>
 </div>
