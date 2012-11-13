@@ -1,3 +1,41 @@
 // Place all the styles related to the Payments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+header.paypal {
+	background-size:8% auto;
+	background-repeat:no-repeat;
+	background-image: url('/check_icon.png');
+	padding-left:65px;
+}
+
+div.paypal {
+	font-size:14px !important;
+}
+div.paypal p {
+	
+}
+div.paypal table {
+	width: 100%;
+	border-top: 1px #ccc solid;
+	color:#000;
+}
+div.paypal table td {
+	padding-top:10px;
+	width:33.3%;
+}
+div.paypal table .actions {
+	white-space: nowrap;
+	text-align:right;
+	font-size:12px;	
+}
+div.paypal table .item {
+	font-weight: bold;
+	white-space:nowrap;
+}
+div.paypal table .price {
+	color:red;
+	font-weight:bold;
+	text-align:center;
+}
