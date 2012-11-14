@@ -1,4 +1,4 @@
-INHOUSE_LEAGUE_FIRST_SESSION_DATE = '2012-04-14'.to_date
+INHOUSE_LEAGUE_FIRST_SESSION_DATE = '2013-04-20'.to_date
 
 INHOUSE_LEAGUE_SESSION_GRID = [
   ["Sat, Apr 20", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", ""],
@@ -26,6 +26,8 @@ APP_ADDRESS = {
   :city_state_zip => 'Lakeville, MN 55044'
 }
 APP_PHONE = '(952) 431-6341'
+
+LITE_VOLLEYBALL_PRICE_IN_CENTS = 3500
 
 SCHOOL_OPTIONS = [
   ['All Saints', 'ASE'], 

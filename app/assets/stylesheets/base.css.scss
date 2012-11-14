@@ -12,6 +12,14 @@ body		{ padding-top:60px; }
 	color:red;
 	font-weight:bold;
 }
+/* -- extra margin at the bottom of grouped controls -- */
+.control-group.last {
+	margin-bottom:50px;
+}
+
+fieldset .alert p {
+	margin:12px 0;
+}
 
 .alert table tbody tr td:first-child {
 	padding-right:10px;

@@ -1,4 +1,4 @@
-<div class="control-group">
+<div class="control-group last">
   <%= f.label :product_id, requirify('Which session?'), :class => 'control-label' %>
   <div class="controls">
     <%= f.select :product_id, Product.find(:all, :conditions => ['category =?', 'inhouse']).map { |p| [p.name, p.id] }, { :prompt => '' }, :class => 'input-auto' %>
@@ -34,6 +34,27 @@
 </div>
 
 <div class="control-group">
+  <%= f.label :tshirt_size, requirify('Tshirt size'), :class => 'control-label' %>
+  <div class="controls">
+      <%= f.select :tshirt_size, SIZE_OPTIONS, { :prompt => '' }, :class => 'input-auto' %>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :school, requirify('School'), :class => 'control-label' %>
+  <div class="controls">
+    <%= f.select :school, SCHOOL_OPTIONS, { :prompt => '' }, :class => 'input-auto' %>
+  </div>
+</div>
+
+<div class="control-group last">
+  <%= f.label :grade, requirify('Grade'), :class => 'control-label' %>
+  <div class="controls">
+    <%= f.select :grade, GRADE_OPTIONS, { :prompt => '' }, :class => 'input-mini' %>
+  </div>
+</div>
+
+<div class="control-group">
   <%= f.label :email, requirify('Contact email'), :class => 'control-label' %>
   <div class="controls">
     <%= f.text_field :email %>
@@ -47,7 +68,7 @@
   </div>
 </div>
 
-<div class="control-group">
+<div class="control-group last">
   <%= f.label :phone, requirify('Phone'), :class => 'control-label' %>
   <div class="controls">
     <%= f.text_field :phone %>
@@ -75,68 +96,73 @@
   </div>
 </div>
 
-<div class="control-group">
+<div class="control-group last">
   <%= f.label :zip, :class => 'control-label' %>
   <div class="controls">
     <%= f.text_field :zip, :class => 'input-small' %>
   </div>
 </div>
 
-<div class="control-group">
-  <%= f.label :tshirt_size, requirify('Tshirt size'), :class => 'control-label' %>
-  <div class="controls">
-      <%= f.select :tshirt_size, SIZE_OPTIONS, { :prompt => '' }, :class => 'input-auto' %>
+<div class="alert alert-warning alert-block last">
+  <h4>Please volunteer as a parent helper!</h4>
+  <p>
+  Would you consider being a parent helper for your daughter's team? 
+  You don't need to know anything about volleyball. 
+  We'll make it easy and fun!!
+  </p>
+  <div class="field">
+    <div class="checkbox">
+      <%= f.check_box :parent_helper %>
+      <%= f.label :parent_helper, "Yes - I'll be a parent helper! " %>
+    </div>
+  </div>
+  <p>
+    If you'll be helping, please give us your tshirt size below. 
+  </p>
+  <div class="">
+    <%= f.select :parent_tshirt_size, SIZE_OPTIONS, :prompt => 'Select size ..' %>
   </div>
 </div>
 
-<div class="control-group">
-  <%= f.label :school, requirify('School'), :class => 'control-label' %>
-  <div class="controls">
-    <%= f.select :school, SCHOOL_OPTIONS, { :prompt => '' }, :class => 'input-auto' %>
+<div class="alert alert-success alert-block">
+  <h4>Include a lite volleyball with your registration? </h4>
+  <p>
+    All of our volleyball practice and play is done using specialized light volleyball from Tachikara designed for young volleyball players. 
+    Check this box if you would like to purchase a volleyball to keep along with your registration ($XX.XX).
+  </p>
+  <div class="field">
+    <div class="checkbox">
+      <%= f.check_box :volleyball %>
+      <%= f.label :volleyball, "Yes, include lite volleyball (#{dollarify LITE_VOLLEYBALL_PRICE_IN_CENTS})" %>
+    </div>  
   </div>
 </div>
 
-<div class="control-group">
-  <%= f.label :grade, requirify('Grade'), :class => 'control-label' %>
-  <div class="controls">
-    <%= f.select :grade, GRADE_OPTIONS, { :prompt => '' }, :class => 'input-mini' %>
-  </div>
+<div class="alert alert-info alert-block">
+  <h4>Waiver and release of liability</h4>
+  <p>
+    In consideration of your acceptance of my child as a participant in the <%= APP_LONG_NAME %> program, 
+    I hereby waive all claims against <%= APP_LONG_NAME %>, Inc., 
+    it’s coaches, board members, organizers, persons transporting my child to a from activities, 
+    from any claim arising out of injury or harm to my child incidental to, connected with, 
+    or arising out of the <%= APP_LONG_NAME %> activities. 
+    All sports have intrinsic hazards. 
+    Participation in the <%= APP_LONG_NAME %> in-house session implies some risk of injury.  
+    I understand that photos and/or videos may be taken of the session for advancement of learning.
+  </p> 
+  <div class="field">
+    <div class="checkbox">      
+      <%= f.check_box :waiver %>
+      <%= f.label :waiver, requirify('I have read and agree to the liability release') %>
+    </div>
+  </div>  
 </div>
 
-<div class="control-group">
-  <%= f.label :note, :class => 'control-label' %>
+<div class="control-group last">
+  <%= f.label :note, 'Any special note for this registration', :class => 'control-label' %>
   <div class="controls">
     <%= f.text_area :note, :class => 'input-xlarge', :rows => 3 %>
   </div>
 </div>
 
-<div class="control-group">
-  <div class="controls">
-    <%= f.label :parent_helper, :class => 'checkbox' do %>
-      <%= f.check_box :parent_helper %> Parent helper?
-    <% end %>
-  </div>
-</div>
 
-<div class="control-group">
-  <%= f.label :parent_tshirt_size, :class => 'control-label' %>
-  <div class="controls">
-    <%= f.select :parent_tshirt_size, SIZE_OPTIONS, { :prompt => '' }, :class => 'input-auto' %>
-  </div>
-</div>
-
-<div class="control-group">
-  <div class="controls">
-    <%= f.label :waiver, :class => 'checkbox' do %>
-      <%= f.check_box :waiver %> <%= requirify 'Read and agree to waiver?' %>
-    <% end %>
-  </div>
-</div>
-
-<div class="control-group">
-  <div class="controls">
-    <%= f.label :volleyball, :class => 'checkbox' do %>
-      <%= f.check_box :volleyball %> Include lite volleyball?
-    <% end %>
-  </div>
-</div>
