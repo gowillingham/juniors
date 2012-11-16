@@ -5,7 +5,11 @@
     <%= render 'fields', :f => f %>
 
 		<div class="form-actions">
-		  <%= f.submit nil, :class => 'btn btn-primary' %>
+			<% if logged_in? %>
+			  <%= f.submit nil, :class => 'btn btn-primary' %>
+			<% else %>
+			  <%= f.submit 'Continue »', :class => 'btn btn-primary' %>
+			<% end %>
 		  or <%= link_to 'Cancel', root_path %>
 		</div>
   </fieldset>
