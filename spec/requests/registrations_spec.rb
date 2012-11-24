@@ -27,13 +27,13 @@ describe "Registrations" do
 					fill_in 'registration_grade', 							:with => '4'
 					fill_in 'registration_note', 								:with => 'note for admin'
 					fill_in 'registration_parent_tshirt_size', 	:with => 'L'
-					check 'Parent helper?'
-					check 'Read and agree to waiver?'
-					check 'Include lite volleyball?'
+					check 'registration_parent_helper'
+					check 'registration_waiver'
+					check 'registration_volleyball'
 					click_button
 
 					response.should render_template('payments/paypal')
-					response.should have_selector('h1', :content => 'Confirm your payment')
+					response.should have_selector('h1', :content => 'Please confirm your payment')
 				end.should change(Registration, :count).by(1)
 			end
 		end
@@ -59,9 +59,9 @@ describe "Registrations" do
 					fill_in 'registration_grade', 							:with => '4'
 					fill_in 'registration_note', 								:with => 'note for admin'
 					fill_in 'registration_parent_tshirt_size', 	:with => 'L'
-					check 'Parent helper?'
-					check 'Read and agree to waiver?'
-					check 'Include lite volleyball?'
+					check 'registration_parent_helper'
+					check 'registration_waiver'
+					check 'registration_volleyball'
 					click_button
 					
 					response.should render_template('registrations/new')

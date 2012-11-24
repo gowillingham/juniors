@@ -1,6 +1,6 @@
 <% payment_service_for @registration.id, 
 		PAYPAL_ACCOUNT, 
-		:amount => @registration.product.price,
+		:amount => @registration.total_price,
     :currency => 'USD', 
 		:service => :paypal do |service|
 	    service.customer :first_name => @registration.first_name,
@@ -36,8 +36,11 @@
 		<table class="">
 			<tbody>
 				<tr>
-					<td class="item"><%= @registration.product.name %></td>
-					<td class="price"><%= dollarify @registration.product.price %></td>
+					<td class="item">
+						<%= @registration.product.name %>
+						<%= " with lite volleyball" if @registration.volleyball? %>
+					</td>
+					<td class="price"><%= dollarify @registration.total_price %></td>
 					<td class="actions">
 						<%= submit_tag 'Pay now with PayPal' %>
 						or <%= link_to 'Cancel', new_registration_path %>

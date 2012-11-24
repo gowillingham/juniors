@@ -71,6 +71,13 @@ describe PaymentsController do
     end
   end
 
+  describe "GET paypal" do
+    it "assigns the requested payment a @payment" do
+      payment = Payment.create! valid_attributes
+      get :paypal, :id => payment
+      assigns(:payment).should eq(payment)
+    end 
+  end
 
   describe "PUT update" do
     it "should reject un-authenticated access" do

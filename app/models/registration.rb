@@ -42,4 +42,9 @@ class Registration < ActiveRecord::Base
 	def parent_name
 		"#{parent_first_name} #{parent_last_name}"
 	end
+
+	def total_price
+		self.product.price
+		self.product.price + LITE_VOLLEYBALL_PRICE_IN_CENTS if volleyball?
+	end
 end
