@@ -1,2 +1,3 @@
+postgres cannot access the server configuration file "/usr/local/pgsql/data/postgresql.conf": No such file or directory
 FATAL:  lock file "postmaster.pid" already exists
-HINT:  Is another postmaster (PID 1636) running in data directory "/usr/local/var/postgres"?
+HINT:  Is another postmaster (PID 5200) running in data directory "/usr/local/var/postgres"?

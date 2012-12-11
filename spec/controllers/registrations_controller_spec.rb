@@ -117,6 +117,9 @@ describe RegistrationsController do
         post :create, :registration => valid_attributes
         assigns(:registration).payments.any?.should be_true
       end
+
+      it "sends a confirmation email message to the customer"
+      it "sends a confirmation email message to the administrator"
     end
 
     describe "with invalid params" do

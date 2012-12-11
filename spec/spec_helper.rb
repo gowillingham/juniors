@@ -32,4 +32,8 @@ RSpec.configure do |config|
   # automatically. This will be the default behavior in future versions of
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = false
+
+  # include mailer_macros and clear emails from ActionMailer::Base.deliveries
+  config.include(MailerMacros)
+  config.before(:each) { reset_email }
 end

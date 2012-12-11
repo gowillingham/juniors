@@ -57,6 +57,11 @@ select.input-auto {
 	font-weight:bold;
 }
 
+/* -- set home link to white on home page --*/
+.pages.home nav a.brand {
+	color:#fff;
+}
+
 .footer {
 	margin-bottom:20px;
 	color:#aaa;
