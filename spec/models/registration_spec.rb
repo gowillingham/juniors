@@ -52,6 +52,14 @@ describe Registration do
       registration.should respond_to(:payments)
     end
 
+    it "includes .total_price" do
+      registration_1 = Registration.create! @attr
+      registration_1.total_price.should eq(registration_1.product.price + LITE_VOLLEYBALL_PRICE_IN_CENTS)
+
+      registration_2 = Registration.create! @attr.merge(:volleyball => false)
+      registration_2.total_price.should eq(registration_2.product.price)
+    end
+
     context ".balance" do
       it "returns the balance of the product minus any payments" do
         product = Factory(:product, :price => 5000)

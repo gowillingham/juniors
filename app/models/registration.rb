@@ -44,7 +44,10 @@ class Registration < ActiveRecord::Base
 	end
 
 	def total_price
-		self.product.price
-		self.product.price + LITE_VOLLEYBALL_PRICE_IN_CENTS if volleyball?
+		if self.volleyball?
+		  self.product.price + LITE_VOLLEYBALL_PRICE_IN_CENTS
+		else
+			self.product.price
+		end
 	end
 end

@@ -55,6 +55,7 @@ class RegistrationsController < ApplicationController
           format.json { render json: @registration, status: :created, location: @registration }
         else
           format.html {
+            UserMailer.customer_notification_for_registration(@registration).deliver
             redirect_to paypal_payment_url(@payment)
           }
         end
