@@ -99,6 +99,13 @@ describe RegistrationsController do
           post :create, :registration => valid_attributes
           response.should redirect_to(paypal_payment_path(assigns(:registration).payments.first))
         end
+
+        it "sends confirmation email messages to the customer + admin" do
+          logout_user
+          expect {
+            post :create, :registration => valid_attributes
+          }.to change{ ActionMailer::Base.deliveries.count }.by(2)
+        end
       end
 
       it "creates a new Registration" do
@@ -117,13 +124,6 @@ describe RegistrationsController do
         post :create, :registration => valid_attributes
         assigns(:registration).payments.any?.should be_true
       end
-
-      it "sends a confirmation email message to the customer" do
-        post :create, :registration => valid_attributes
-        last_email.to.should include(valid_attributes[:first_name])
-      end
-
-      it "sends a confirmation email message to the administrator"
     end
 
     describe "with invalid params" do
