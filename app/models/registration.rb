@@ -43,6 +43,17 @@ class Registration < ActiveRecord::Base
 		"#{parent_first_name} #{parent_last_name}"
 	end
 
+	def has_address?
+		# checks for any missing address elements ..
+		[self.address, self.city, self.zip].all? { |i| !i.blank? }
+	end 
+
+	def full_street_address
+		if self.has_address?
+			"#{self.address}\n#{self.city}, #{self.state} #{self.zip}"
+		end
+	end
+
 	def total_price
 		if self.volleyball?
 		  self.product.price + LITE_VOLLEYBALL_PRICE_IN_CENTS

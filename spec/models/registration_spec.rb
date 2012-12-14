@@ -13,6 +13,7 @@ describe Registration do
       :phone => '999 999 9999', 
       :city => 'city', 
       :state => 'state', 
+      :zip => '11111',
       :tshirt_size => 'YL', 
       :parent_tshirt_size => 'XL', 
       :grade => '5', 
@@ -37,27 +38,55 @@ describe Registration do
       registration.should respond_to(:product)
     end 
 
-    it "includes .name" do
+    it "include .name" do
       registration = Registration.create!(@attr)
       registration.should respond_to(:name)
     end
 
-    it "includes .parent_name" do
+    it "include .parent_name" do
       registration = Registration.create!(@attr)
       registration.should respond_to(:parent_name)
     end
 
-    it "includes .payments" do
+    it "include .payments" do
       registration = Registration.create! @attr
       registration.should respond_to(:payments)
     end
 
-    it "includes .total_price" do
+    it "include .total_price" do
       registration_1 = Registration.create! @attr
       registration_1.total_price.should eq(registration_1.product.price + LITE_VOLLEYBALL_PRICE_IN_CENTS)
 
       registration_2 = Registration.create! @attr.merge(:volleyball => false)
       registration_2.total_price.should eq(registration_2.product.price)
+    end
+
+    it "include .full_street_address" do
+      registration = Registration.create! @attr.merge(:address => nil)
+      registration.should respond_to(:full_street_address)
+    end
+
+    context ".has_address?" do
+
+      it "exists" do
+        registration = Registration.create!(@attr)
+        registration.should respond_to(:has_address?)
+      end
+
+      it "returns true if all the address elements are present" do
+        registration = Registration.create!(@attr)
+        registration.has_address?.should be_true
+
+        registration = Registration.create! @attr.merge(:zip => nil)
+        registration.has_address?.should be_false
+
+        registration = Registration.create! @attr.merge(:zip => '')
+        registration.has_address?.should be_false
+
+        registration = Registration.create! @attr.merge(:zip => '', :address => nil, :city => '', :state => nil)
+        registration.has_address?.should be_false
+      end
+
     end
 
     context ".balance" do
