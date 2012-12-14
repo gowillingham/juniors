@@ -43,5 +43,10 @@ describe UserMailer do
     it "should have the correct from address" do
       @mail.from.should eq([INFO_EMAIL_ADDRESS])
     end
+
+    it "should include relevant details in the body" do
+      @mail.body.encoded.should =~ /#{@registration.parent_last_name}, #{@registration.parent_first_name}/
+      @mail.body.encoded.should =~ /#{@registration.last_name}, #{@registration.first_name}/
+    end
   end
 end
