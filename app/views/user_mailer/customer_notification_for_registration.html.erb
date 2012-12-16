@@ -43,7 +43,7 @@
         <p>We have noted your willingness to help with a team and will contact you with more information - thanks!</p>
       <% end %>
       
-      <%#= league_when_and_where_grid.html_safe %>
+      <%= league_when_and_where_grid(true).html_safe %>
       
       <p>
 				The first date for volleyball is <%= INHOUSE_LEAGUE_FIRST_SESSION_DATE.strftime("%A %B %e, %Y") %>.

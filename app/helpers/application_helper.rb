@@ -11,9 +11,10 @@ module ApplicationHelper
     arr = []
     
     if emailify
-      header_table_style = " width='600' style='border-collapse:collapse;margin:20px 0;font-size:11px;'"
+      header_table_style = " width='600' style='border-collapse:collapse;margin:20px 0;font-size:14px;'"
       header_row_style = " style='background-color:#000;color:#fff;text-align:left;'"
-      header_cell_style = " style='border:solid 1px #000;'"
+      header_cell_style = " style='border:solid 1px #000;padding:3px;'"
+      body_cell_style = " style='border:solid 1px #000;padding:3px;'"
     else
       cls = " class='table'"
     end
@@ -32,11 +33,11 @@ module ApplicationHelper
     arr << "<tbody>"
     INHOUSE_LEAGUE_SESSION_GRID.each do |row|
       arr << "<tr>"
-      arr << "<td#{header_cell_style}>#{row[0]}</td>"
-      arr << "<td#{header_cell_style}>#{row[1]}</td>"
-      arr << "<td#{header_cell_style}>#{row[2]}</td>"
-      arr << "<td#{header_cell_style}>#{row[3]}</td>"
-      arr << "<td#{header_cell_style}>#{row[4]}</td>"
+      arr << "<td#{body_cell_style}>#{row[0]}</td>"
+      arr << "<td#{body_cell_style}>#{row[1]}</td>"
+      arr << "<td#{body_cell_style}>#{row[2]}</td>"
+      arr << "<td#{body_cell_style}>#{row[3]}</td>"
+      arr << "<td#{body_cell_style}>#{row[4]}</td>"
       arr << "</tr>"
     end
     arr << "</tbody>"

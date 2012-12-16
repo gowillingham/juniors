@@ -1,4 +1,5 @@
 class UserMailer < ActionMailer::Base
+  helper ApplicationHelper
   default :from => INFO_EMAIL_ADDRESS
   
   def customer_notification_for_registration(registration)
