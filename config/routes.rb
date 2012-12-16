@@ -2,12 +2,12 @@ Juniors::Application.routes.draw do
   resources :payments do
     member do
       get 'paypal'
-      post 'ipn'
     end
   end
 
-  resources :registrations
+  post 'payments/ipn', :to => 'payments#ipn'
 
+  resources :registrations
   resources :products
 
   match '/contact', :to => 'pages#contact'
