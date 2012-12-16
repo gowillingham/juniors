@@ -16,7 +16,7 @@
 	    service.invoice @registration.id
 	    service.tax '0.00'
 	    # service.notify_url url_for(:only_path => false, :controller => 'payments', :action => 'ipn')
-	    service.notify_url ipn_payment_url(@payment, :only_path => false)
+	    service.notify_url payments_ipn_url(@payment, :only_path => false)
 	    service.return_url registration_url(@registration.id)
 	    # service.notify_url url_for(:only_path => false, :controller => 'payments', :action => 'ipn')
 	    service.notify_url root_url(:only_path => false)
