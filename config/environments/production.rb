@@ -23,13 +23,12 @@ Juniors::Application.configure do
   # my email settings for gmail ..
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address          => "smtp.gmail.com",
-    :port             => 587,
-    :domain           => "lakevillejuniors.com",
-    :authentication   => "plain",
-    :user_name        => "lakevillejuniors@gmail.com",
-    :password         => "reneepaul",
-    :enable_starttles => true
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => 'lakevillejuniors.com'
   }  
 
   # Defaults to Rails.root.join("public/assets")
