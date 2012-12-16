@@ -55,5 +55,8 @@ module Juniors
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # this to allow me to pre-compile my assets for push to production ..
+    config.assets.initialize_on_precompile = false
   end
 end
