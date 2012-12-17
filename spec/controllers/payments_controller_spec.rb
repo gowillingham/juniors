@@ -27,6 +27,11 @@ describe PaymentsController do
     }
   end
 
+  describe "POST ipn" do
+    it "should allow un-authenticated access"
+    it "should render nothing"
+  end
+
   describe "GET index" do
     it "should reject un-authenticated access" do
       logout_user

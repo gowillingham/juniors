@@ -1,7 +1,21 @@
 class PaymentsController < ApplicationController
   include ActiveMerchant::Billing::Integrations
 
-  before_filter :require_login, :except => [:paypal]
+  before_filter :require_login, :except => [:paypal, :ipn]
+
+  def ipn
+    registration = Registration.find(params[:item_number])
+    @registration = registration # debug
+    notify = Paypal::Notification.new(request.raw_post)   
+      
+    if registration.payments.first.receive_paypal_payment(params, notify)
+      UserMailer.customer_notification_for_registration_payment(registration).deliver
+    end
+    
+    # render :nothing => true
+
+    render :layout => false # debug
+  end
 
   def paypal
     @payment = Payment.find params[:id]

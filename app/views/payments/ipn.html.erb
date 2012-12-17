@@ -1,0 +1,23 @@
+======= debug ======= 
+item_number::<%= params[:item_number] %>
+payment_status::<%= params[:payment_status] %>
+mc_gross => <%= params[:mc_gross] %>
+paypal_txn_id::<%= params[:txn_id] %>
+paypal_payment_status::<%= params[:payment_status] %>
+paypal_pending_status_reason::<%= params[:pending_reason] %>
+paypal_txn_type::<%= params[:txn_type] %>
+paypal_payment_type::<%= params[:payment_type] %>
+paypal_verify_sign::<%= params[:verify_sign] %>
+paypal_payer_status::<%= params[:payer_status] %>
+paypal_mc_fee::<%= params[:mc_fee] %>
+
+@registration.last_name::<%= @registration.last_name %>
+@registration.first_name::<%= @registration.first_name %>
+@registration.email::<%= @registration.email %>
+@registration.payments.first.amount::<%= @registration.payments.first.amount %>
+
+Rails.env.test? => <%= Rails.env.test? %>
+Rails.env.development? => <%= Rails.env.development? %>
+======= debug ======= 
+
+
