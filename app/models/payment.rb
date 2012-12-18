@@ -13,7 +13,7 @@ class Payment < ActiveRecord::Base
         if !(params_hash[:payment_status] == PAYPAL_COMPLETED)
           Rails.logger.info "PAYPAL_TXN: transaction did not return #{PAYPAL_COMPLETED}"
         elsif registration.total_price.to_s != params_hash[:mc_gross].gsub(".", "")
-          Rails.logger.info "PAYPAL_TXN: registration.product.price:#{registration.product.price} <> mc_gross:#{params[:mc_gross]} returned by paypal"
+          Rails.logger.info "PAYPAL_TXN: registration.total_price:#{registration.total_price} <> mc_gross:#{params_hash[:mc_gross]} returned by paypal"
         else
           self.update_attributes(
             :paypal_txn_id => params_hash[:txn_id],

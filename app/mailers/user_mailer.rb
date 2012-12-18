@@ -4,19 +4,22 @@ class UserMailer < ActionMailer::Base
   
   def customer_notification_for_registration(registration)
     @registration = registration
-    subject = "[#{APP_SHORT_NAME}] **Registration confirmation for #{registration.first_name} #{registration.last_name}**"
+    subject = "[#{APP_SHORT_NAME}] ** Registration confirmation for #{registration.first_name} #{registration.last_name} **"
     
     mail :to => registration.email, :subject => subject
   end
 
   def admin_notification_for_registration(registration)
     @registration = registration
-    subject = "[#{APP_SHORT_NAME}] **Registration confirm::##{registration.id}::#{registration.first_name} #{registration.last_name}**"
+    subject = "[#{APP_SHORT_NAME}] ** Registration confirm::##{registration.id}::#{registration.first_name} #{registration.last_name} **"
     
     mail :to => REPORT_TO_EMAIL_LIST, :subject => subject
   end
 
   def customer_notification_for_registration_payment(registration)
-    mail :to => registration.email
+    @registration = registration
+    subject = "[#{APP_SHORT_NAME}] ** Registration payment confirmation for #{registration.first_name} #{registration.last_name} **"
+    
+    mail :to => registration.email, :subject => subject
   end
 end
