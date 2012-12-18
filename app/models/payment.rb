@@ -8,11 +8,11 @@ class Payment < ActiveRecord::Base
     registration = Registration.find(registration_id)
     received = false
     
-    if notify.acknowledge
+    if (notify.acknowledge || !Rails.env.production?)
       begin 
         if !(params_hash[:payment_status] == PAYPAL_COMPLETED)
           Rails.logger.info "PAYPAL_TXN: transaction did not return #{PAYPAL_COMPLETED}"
-        elsif registration.product.price.to_s != params_hash[:mc_gross].gsub(".", "")
+        elsif registration.total_price.to_s != params_hash[:mc_gross].gsub(".", "")
           Rails.logger.info "PAYPAL_TXN: registration.product.price:#{registration.product.price} <> mc_gross:#{params[:mc_gross]} returned by paypal"
         else
           self.update_attributes(

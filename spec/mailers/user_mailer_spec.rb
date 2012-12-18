@@ -1,6 +1,14 @@
 require "spec_helper"
 
 describe UserMailer do
+
+  describe "customer_notification_for_registration_payment" do
+    it "should have the correct subject"
+    it "should have the correct to address"
+    it "should have the correct from address" 
+    it "should include the parent name in the body"
+  end
+
   describe "customer_notification_for_registration" do
     before(:each) do
       @product = Factory(:product)

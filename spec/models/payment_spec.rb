@@ -3,7 +3,10 @@ require 'spec_helper'
 describe Payment do
   before(:each) do
   	@product = Factory(:product)
-  	@registration = Factory(:registration, :product_id => @product.id)
+  	@registration = Factory(:registration, 
+      :product_id => @product.id,
+      :volleyball => false
+    )
   	@attr ={
 	    :registration_id => @registration.id
   	}
@@ -73,6 +76,7 @@ describe Payment do
           :payment_type => "instant",
           :verify_sign => "AZQLcOZ7B.YM2m-QDAXOrQQcLFYuA0N0XoC3zadaGhkGNF2nlRWmpzlI",
           :payer_status => "verified",
+          :payer_status_reason => "some_value",
           :test_ipn => "1",
           :tax => "0.00",
           :txn_id => @trans_id,

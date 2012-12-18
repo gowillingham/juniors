@@ -15,4 +15,8 @@ class UserMailer < ActionMailer::Base
     
     mail :to => REPORT_TO_EMAIL_LIST, :subject => subject
   end
+
+  def customer_notification_for_registration_payment(registration)
+    mail :to => registration.email
+  end
 end

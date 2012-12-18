@@ -4,16 +4,14 @@ class PaymentsController < ApplicationController
   before_filter :require_login, :except => [:paypal, :ipn]
 
   def ipn
-    registration = Registration.find(params[:item_number])
-    @registration = registration # debug
+    @registration = Registration.find(params[:item_number])
     notify = Paypal::Notification.new(request.raw_post)   
       
-    if registration.payments.first.receive_paypal_payment(params, notify)
-      UserMailer.customer_notification_for_registration_payment(registration).deliver
+    if @registration.payments.first.receive_paypal_payment(params, notify)
+      UserMailer.customer_notification_for_registration_payment(@registration).deliver
     end
     
     # render :nothing => true
-
     render :layout => false # debug
   end
 
