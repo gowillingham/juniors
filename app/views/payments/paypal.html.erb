@@ -17,9 +17,7 @@
 	    service.tax '0.00'
 	    # service.notify_url url_for(:only_path => false, :controller => 'payments', :action => 'ipn')
 	    service.notify_url payments_ipn_url(@payment, :only_path => false)
-	    service.return_url registration_url(@registration.id)
-	    # service.notify_url url_for(:only_path => false, :controller => 'payments', :action => 'ipn')
-	    service.notify_url root_url(:only_path => false)
+	    service.return_url registration_url(@registration.id, :only_path => false)
 %>
 
 	<header id="overview" class="subhead page-header paypal">
