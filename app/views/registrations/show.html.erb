@@ -29,7 +29,7 @@
         </tr>
         <tr>
           <td class=""><strong>Balance: <strong></td>
-          <td><%= dollarify (@registration.product.price - @registration.payments.first.amount) %></td>
+          <td><%= dollarify (@registration.total_price - @registration.payments.first.amount) %></td>
         </tr>
       </tbody>
     </table>
