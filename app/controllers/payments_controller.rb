@@ -2,7 +2,8 @@ class PaymentsController < ApplicationController
   include ActiveMerchant::Billing::Integrations
 
   before_filter :require_login, :except => [:paypal, :ipn]
-
+  skip_before_filter :verify_authenticity_token, :only => [:ipn]
+  
   def ipn
     @registration = Registration.find(params[:item_number])
     notify = Paypal::Notification.new(request.raw_post)   
