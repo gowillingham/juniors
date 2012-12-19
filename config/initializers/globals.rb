@@ -5,7 +5,7 @@ INHOUSE_LEAGUE_SESSION_GRID = [
   ["Sat, Apr 27", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", "Picture day!"],
   ["Sat, May 4", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", ""],
   ["Sat, May 11", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", ""],
-  ["Sat, Jun 18", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", "Tournament!"],
+  ["Sat, May 18", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", "Tournament!"],
 ]
 
 APP_LONG_NAME = "Lakeville Junior Volleyball"

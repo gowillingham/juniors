@@ -11,8 +11,8 @@ class PaymentsController < ApplicationController
       UserMailer.customer_notification_for_registration_payment(@registration).deliver
     end
     
-    # render :nothing => true
-    render :layout => false # debug
+    render :nothing => true
+    # render :layout => false # debug
   end
 
   def paypal
