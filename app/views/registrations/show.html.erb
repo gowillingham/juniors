@@ -1,9 +1,25 @@
 <%= render 'shared/show_flash' %>
 
-<div class="page-header">
-  <h1>Details for <%= @registration.name %></h1>
+<% unless logged_in? %>
+  <header id="overview" class="subhead page-header paypal">
+    <div class="container">
+      <h1>Registration confirmation</h1>
+      <p class='lead'>Thanks for your payment!</p>
+    </div>
+  </header>
+  <div class="alert alert-success">
+  <h4>Registration details</h4>
+    Your registration details are below. 
+    We have also confirmed this information to you via the email address you provided with your registration (please make sure your spam filter will allow mail from <%= APP_HOST_NAME %>). 
+    If any of this info is in error, send your changes to <%= mail_to INFO_EMAIL_ADDRESS %>. 
 </div>
-<% if @registration.payments.any? %>
+<% else %> 
+  <div class="page-header">
+    <h1>Details for <%= @registration.name %></h1>
+  </div>
+<% end %>
+
+<% if @registration.payments.any? && logged_in? %>
   <div class="alert alert-info">
     <table class="nested">
       <tbody>
@@ -29,96 +45,120 @@
         </tr>
         <tr>
           <td class=""><strong>Balance: <strong></td>
-          <td><%= dollarify (@registration.total_price - @registration.payments.first.amount) %></td>
+          <td><%= dollarify (@registration.balance) %></td>
         </tr>
       </tbody>
     </table>
   </div>
 <% end %>
-<table class="table table-bordered">
-  <tbody>
-    <tr>
-      <td class="form-actions top-toolbar" colspan="2">
-        <%= link_to 'All registrations', registrations_path, :class => 'btn' %>
-        <%= link_to 'Edit', edit_registration_path(@registration), :class => 'btn' %>
-        <%= link_to 'Destroy', registration_path(@registration), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
-      </td>
-    </tr>
-    <tr>
-      <td class="shrink"><strong>#:</strong> </td>
-      <td><%= @registration.id %></td>
-    </tr>
-    <tr>
-      <td class="shrink"><strong>Product:</strong> </td>
-      <td><%= @registration.product.name %></td>
-    </tr>
-    <tr>
-      <td class="shrink"><strong>Price:</strong> </td>
-      <td><%= dollarify @registration.product.price %></td>
-    </tr>
-    <tr>
-      <td class="shrink"><strong>Player:</strong> </td>
-      <td><%= @registration.name %></td>
-    </tr>
-    <tr>
-      <td class="shrink"><strong>Parent:</strong> </td>
-      <td><%= @registration.parent_name %></td>
-    </tr>
-    <tr>
-      <td class="shrink"><strong>Email:</strong> </td>
-      <td><%= @registration.email %></td>
-    </tr>
-    <tr>
-      <td class="shrink"><strong>Phone:</strong> </td>
-      <td><%= @registration.phone %></td>
-    </tr>
-    <tr>
-      <td class="shrink"><strong>Address:</strong> </td>
-      <td><%= @registration.address %></td>
-    </tr>
-    <tr>
-      <td class="shrink"><strong>City:</strong> </td>
-      <td><%= @registration.city %></td>
-    </tr>
-    <tr>
-      <td class="shrink"><strong>State:</strong> </td>
-      <td><%= @registration.state %></td>
-    </tr>
-    <tr>
-      <td class="shrink"><strong>Zip:</strong> </td>
-      <td><%= @registration.zip %></td>
-    </tr>
-    <tr>
-      <td class="shrink"><strong>Grade:</strong> </td>
-      <td><%= @registration.grade %></td>
-    </tr>
-    <tr>
-      <td class="shrink"><strong>School:</strong> </td>
-      <td><%= @registration.school %></td>
-    </tr>
-    <tr>
-      <td class="shrink"><strong>Tshirt size:</strong> </td>
-      <td><%= @registration.tshirt_size %></td>
-    </tr>
-    <tr>
-      <td class="shrink"><strong>Parent tshirt size:</strong> </td>
-      <td><%= @registration.parent_tshirt_size %></td>
-    </tr>
-    <tr>
-      <td class="shrink"><strong>Note:</strong> </td>
-      <td><%= @registration.note %></td>
-    </tr>
-    <tr>
-      <td class="shrink"><strong>Parent helper:</strong> </td>
-      <td><%= @registration.parent_helper %></td>
-    </tr>
-    <tr>
-      <td class="shrink"><strong>Waiver:</strong> </td>
-      <td><%= @registration.waiver %></td>
-    </tr>
-    <tr>
-      <td class="shrink"><strong>Volleyball:</strong> </td>
-      <td><%= @registration.volleyball %></td>
-    </tr>
-  <tbody>
-</table>
+
+  <table class="table table-bordered">
+    <tbody>
+
+      <% if logged_in? %>
+        <tr>
+          <td class="form-actions top-toolbar" colspan="2">
+            <%= link_to 'All registrations', registrations_path, :class => 'btn' %>
+            <%= link_to 'Edit', edit_registration_path(@registration), :class => 'btn' %>
+            <%= link_to 'Edit payment', edit_payment_path(@registration.payments.last), :class => 'btn' %>
+            <%= link_to 'Destroy', registration_path(@registration), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+
+      <tr>
+        <td class="shrink"><strong>Registration #:</strong> </td>
+        <td><%= @registration.id %></td>
+      </tr>
+      <tr>
+        <td class="shrink"><strong>Product:</strong> </td>
+        <td><%= @registration.product.name %></td>
+      </tr>
+      <tr>
+        <td class="shrink"><strong>Total:</strong> </td>
+        <td><%= dollarify @registration.total_price %></td>
+      </tr>
+      <tr>
+        <td class="shrink"><strong>Balance:</strong> </td>
+        <td><%= dollarify @registration.balance %></td>
+      </tr>
+      <tr>
+        <td class="shrink"><strong>Player:</strong> </td>
+        <td><%= @registration.name %></td>
+      </tr>
+      <tr>
+        <td class="shrink"><strong>Parent:</strong> </td>
+        <td><%= @registration.parent_name %></td>
+      </tr>
+      <tr>
+        <td class="shrink"><strong>Email:</strong> </td>
+        <td><%= @registration.email %></td>
+      </tr>
+      <tr>
+        <td class="shrink"><strong>Phone:</strong> </td>
+        <td><%= @registration.phone %></td>
+      </tr>
+
+      <% if logged_in? %>
+        <tr>
+          <td class="shrink"><strong>Address:</strong> </td>
+          <td><%= @registration.address %></td>
+        </tr>
+        <tr>
+          <td class="shrink"><strong>City:</strong> </td>
+          <td><%= @registration.city %></td>
+        </tr>
+        <tr>
+          <td class="shrink"><strong>State:</strong> </td>
+          <td><%= @registration.state %></td>
+        </tr>
+        <tr>
+          <td class="shrink"><strong>Zip:</strong> </td>
+          <td><%= @registration.zip %></td>
+        </tr>
+      <% end %>
+
+      <tr>
+        <td class="shrink"><strong>Grade:</strong> </td>
+        <td><%= @registration.grade %></td>
+      </tr>
+      <tr>
+        <td class="shrink"><strong>School:</strong> </td>
+        <td><%= @registration.school %></td>
+      </tr>
+      <tr>
+        <td class="shrink"><strong>Tshirt size:</strong> </td>
+        <td><%= @registration.tshirt_size %></td>
+      </tr>
+      <tr>
+        <td class="shrink"><strong>Note:</strong> </td>
+        <td><%= @registration.note %></td>
+      </tr>
+      <tr>
+        <td class="shrink"><strong>Parent helper:</strong> </td>
+        <td><%= yes_or_no_thanksify @registration.parent_helper? %></td>
+      </tr>
+
+      <% if logged_in? || @registration.parent_helper? %>
+        <tr>
+          <td class="shrink"><strong>Parent tshirt size:</strong> </td>
+          <td><%= @registration.parent_tshirt_size %></td>
+        </tr>
+      <% end %>
+
+      <% if logged_in? %>
+        <tr>
+          <td class="shrink"><strong>Waiver:</strong> </td>
+          <td><%= @registration.waiver %></td>
+        </tr>
+      <% end %>
+
+      <% if logged_in? || @registration.volleyball? %>
+        <tr>
+          <td class="shrink"><strong>Include lite volleyball (<%= dollarify LITE_VOLLEYBALL_PRICE_IN_CENTS %>):</strong> </td>
+          <td><%= yes_or_no_thanksify @registration.volleyball? %></td>
+        </tr>
+      <% end %>
+    <tbody>
+  </table>
+

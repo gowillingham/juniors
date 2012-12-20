@@ -1,4 +1,13 @@
 module ApplicationHelper
+
+  def yes_or_no_thanksify(val)
+    if val
+      "Yes!"
+    else
+      "No thanks!"
+    end
+  end
+
 	def dollarify(i)
 		number_to_currency(i * 0.01)
 	end

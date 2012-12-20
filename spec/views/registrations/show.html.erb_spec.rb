@@ -27,27 +27,39 @@ describe "registrations/show" do
     @payment = Factory(:payment, :registration_id => @registration.id)
   end
 
-  it "renders attributes in <p>" do
-    render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(//)
-    rendered.should match(//)
-    rendered.should match(//)
-    rendered.should match(//)
-    rendered.should match(//)
-    rendered.should match(//)
-    rendered.should match(//)
-    rendered.should match(//)
-    rendered.should match(//)
-    rendered.should match(//)
-    rendered.should match(//)
-    rendered.should match(//)
-    rendered.should match(//)
-    rendered.should match(//)
-    rendered.should match(//)
-    rendered.should match(//)
-    rendered.should match(//)
-    rendered.should match(//)
-    rendered.should match(/1/)
+  context "for a signed in user" do
+    it "displays the registration attributes" do
+      @user = Factory(:user)
+      login_user
+      render
+
+      rendered.should have_selector('h1', :content => "Details for #{@registration.name}")
+      rendered.should have_selector('tr td', :content => "Product")
+      rendered.should have_selector('td', :content => @registration.product.name)
+      rendered.should have_selector('td', :content => @registration.email)
+      rendered.should have_selector('tr td', :content => "Payment #")
+      rendered.should have_selector('tr td', :content => @registration.payments.last.id.to_s)
+      rendered.should have_selector('.btn', :content => 'Edit')
+      rendered.should have_selector('.btn', :content => 'Destroy')
+      rendered.should have_selector('.btn', :content => 'Edit payment')
+
+      rendered.should match(/1/)
+    end
+  end
+
+  context "for a signed out user" do
+    it "confirms the registration/payment" do
+      render
+
+      rendered.should have_selector('h1', :content => 'Registration confirmation')
+      rendered.should have_selector('td', :content => @registration.product.name)       
+      rendered.should have_selector('td', :content => @registration.name)       
+      rendered.should have_selector('td', :content => @registration.email)        
+      rendered.should have_selector('td', :content => dollarify(@registration.balance))        
+      rendered.should have_selector('td', :content => @registration.payments.last.amount.to_s)       
+      rendered.should_not have_selector('.btn', :content => 'Edit')
+      rendered.should_not have_selector('.btn', :content => 'Destroy')
+      rendered.should_not have_selector('.btn', :content => 'Edit payment')       
+    end
   end
 end

@@ -21,7 +21,7 @@ describe Registration do
       :note => 'note', 
       :waiver => true, 
       :parent_helper => false, 
-      :volleyball => true, 
+      :volleyball => false, 
       :product_id => @product.id
   	}
   end
@@ -54,7 +54,7 @@ describe Registration do
     end
 
     it "include .total_price" do
-      registration_1 = Registration.create! @attr
+      registration_1 = Registration.create! @attr.merge(:volleyball => true)
       registration_1.total_price.should eq(registration_1.product.price + LITE_VOLLEYBALL_PRICE_IN_CENTS)
 
       registration_2 = Registration.create! @attr.merge(:volleyball => false)
@@ -90,12 +90,12 @@ describe Registration do
     end
 
     context ".balance" do
-      it "returns the balance of the product minus any payments" do
+      it "returns the balance of payments minus the product price" do
         product = Factory(:product, :price => 5000)
         registration = Registration.create! @attr.merge(:product_id => product.id)
         registration.payments.create!(:amount => 1000)
         registration.payments.create!(:amount => 2000)
-        registration.balance.should eq(2000) 
+        registration.balance.should eq(-2000) 
       end
     end
   end
