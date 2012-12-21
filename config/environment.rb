@@ -2,11 +2,9 @@
 require File.expand_path('../application', __FILE__)
 
 # set paypal test environment ..
-unless Rails.env == 'production'
-  PAYPAL_ACCOUNT = 'willin_1248207716_biz@lakevillejuniors.com'
-  ActiveMerchant::Billing::Base.mode = :test
+if Rails.env == 'production'
+  PAYPAL_ACCOUNT = 'info@lakevillejuniors.com'
 else
-  # PAYPAL_ACCOUNT = 'info@lakevillejuniors.com'
   PAYPAL_ACCOUNT = 'willin_1248207716_biz@lakevillejuniors.com'
   ActiveMerchant::Billing::Base.mode = :test
 end

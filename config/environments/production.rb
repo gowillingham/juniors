@@ -20,7 +20,7 @@ Juniors::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
-  # my email settings for gmail ..
+  # my email settings for sendgrid ..
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address        => 'smtp.sendgrid.net',

@@ -40,6 +40,10 @@ Note for this registration:
 ---------------------------
 <%= @registration.note %>
 
+Including a volleyball?
+-----------------------
+<%= yes_or_no_thanksify @registration.volleyball? %>
+
 <% if @registration.parent_helper? %>
 We have noted your willingness to help with a team and will contact you with more information - thanks!
 <% end %>

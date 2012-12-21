@@ -36,6 +36,7 @@
         <tr><td>Grade: </td><td><%= @registration.grade %></td></tr>
         <tr><td>Session: </td><td><%= @registration.product.name %></td></tr>
         <tr><td>Tshirt: </td><td><%= @registration.tshirt_size %></td></tr>
+        <tr><td>Include a volleyball?: </td><td><%= yes_or_no_thanksify @registration.volleyball? %></td></tr>
         <tr><td>Special note: </td><td><%= @registration.note %></td></tr>
       </table>
       
