@@ -24,7 +24,7 @@
 	      <div class="nav-collapse">
 	        <ul class="nav">
 	          <li><%= link_to "Home", root_path, :class => :home %></li>
-<!-- 	          <li><%= link_to "Register", new_registration_path, :class => :registration %></li>	          -->	          
+ 	          <li><%= link_to "Register", new_registration_path, :class => :registration %></li>      
  						<li><%= link_to "About", about_path, :class => :about %></li>
 	          <li><%= link_to "Privacy", privacy_path, :class => :privacy %></li>
 	          <li><%= link_to "Contact us", contact_path, :class => :contact %></li>
@@ -48,16 +48,16 @@
       <div class="span3">
 				<ul class="thumbnails">
 				  <li class="span3">
-				    <a href="/south_vs_north.jpg" class="thumbnail">
-							<%= image_tag '/south_vs_north.jpg' %>
+				    <a href="/north_state_champs_2012.jpg" class="thumbnail">
+							<%= image_tag '/north_state_champs_2012.jpg' %>
 						</a>
-							<h6 style="text-align:center;">North wins 2011 3A final!</h6>
+							<h6 style="text-align:center;">North wins 2012 state title!</h6>
 				  </li>
 				  <li class="span3">
-				    <a href="/south_vs_north.jpg" class="thumbnail">
-							<%= image_tag '/south_vs_eagan.jpg' %>
+				    <a href="/maddy_digs_eastview.jpg" class="thumbnail">
+							<%= image_tag '/maddy_digs_eastview.jpg' %>
 						</a>
-							<h6 style="text-align:center;">South defeats Eagan 2011!</h6>
+							<h6 style="text-align:center;">South vs Eastview 2012!</h6>
 				  </li>
 				</ul>    
 				<% if logged_in? %>  	
@@ -86,7 +86,5 @@
     	<p><%= "Copyright #{Time.now.year} - #{APP_LONG_NAME}, Inc." %></p>
 	  </footer>
 	</div>
-
-
 </body>
 </html>
