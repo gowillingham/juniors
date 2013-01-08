@@ -20,6 +20,9 @@
 	    service.return_url registration_url(@registration.id, :only_path => false)
 %>
 
+	<!-- make paypal GET my return_url instead of POST -->
+	<input type="hidden" name="rm" value="1" />
+
 	<header id="overview" class="subhead page-header paypal">
 		<div class="container">
 			<h1>Please confirm your payment</h1>
@@ -42,7 +45,6 @@
 					<td class="actions">
 						<%= submit_tag 'Pay now with PayPal' %>
 						or <%= link_to 'Cancel', new_registration_path %>
-						<input type="hidden" name="rm" value="1" />
 					</td>
 			</tbody>
 		</table>	
