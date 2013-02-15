@@ -3,8 +3,8 @@ INHOUSE_LEAGUE_FIRST_SESSION_DATE = '2013-04-20'.to_date
 INHOUSE_LEAGUE_SESSION_GRID = [
   ["Sat, Apr 20", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", ""],
   ["Sat, Apr 27", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", "Picture day!"],
-  ["Sat, May 4", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", ""],
-  ["Sat, May 11", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", ""],
+  ["Sat, May 4", "8:30-10:00a", "10:30-12:00p", "Lakeville North HS", ""],
+  ["Sat, May 11", "8:30-10:00a", "10:30-12:00p", "Lakeville North HS", ""],
   ["Sat, May 18", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", "Tournament!"],
 ]
 
