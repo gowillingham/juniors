@@ -6,6 +6,7 @@ describe "products/show" do
       :name => "Name",
       :description => "Description",
       :category => "Category",
+      :code => "Code",
       :enabled => false,
       :price => "Price"
     ))
@@ -17,6 +18,7 @@ describe "products/show" do
     rendered.should match(/Name/)
     rendered.should match(/Description/)
     rendered.should match(/Category/)
+    rendered.should match(/Code/)
     rendered.should match(/false/)
     rendered.should match(/Price/)
   end

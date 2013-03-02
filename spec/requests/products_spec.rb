@@ -17,6 +17,7 @@ describe "Products" do
           fill_in "Name",         :with => 'New product'
           fill_in "Description",  :with => 'Volleyball'
           fill_in "Category",     :with => 'Category'
+          fill_in "Code",         :with => 'Code'
           fill_in "Price",        :with => 3500
           check "Enabled?"
           click_button
@@ -33,6 +34,7 @@ describe "Products" do
           visit 'products/new'
           fill_in "Name",         :with => nil
           fill_in "Description",  :with => 'Volleyball'
+          fill_in "Code",         :with => 'Code'
           fill_in "Category",     :with => 'Category'
           fill_in "Price",        :with => 3500
           check "Enabled?"
@@ -51,6 +53,7 @@ describe "Products" do
         :name => 'Product name',
         :description => 'Product description',
         :category => 'Product category',
+        :code => 'Product code',
         :price => 3500,
         :enabled => true
       )
@@ -61,6 +64,7 @@ describe "Products" do
         visit edit_product_path(@product)
         fill_in "Name",         :with => 'New name'
         fill_in "Description",  :with => 'New description'
+        fill_in "Code",         :with => 'Code'
         fill_in "Category",     :with => 'New category'
         fill_in "Price",        :with => 4000
         uncheck "Enabled"
@@ -81,6 +85,7 @@ describe "Products" do
         visit edit_product_path(@product)
         fill_in "Name",         :with => nil
         fill_in "Description",  :with => 'New description'
+        fill_in "Code",         :with => 'Code'
         fill_in "Category",     :with => 'New category'
         fill_in "Price",        :with => 4000
         uncheck "Enabled"

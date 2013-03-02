@@ -15,6 +15,7 @@ Factory.define :product do |product|
 	product.name 				'product_name'
 	product.description 'product_description'
 	product.category 		'product_category'
+  product.code        'product_code'
 	product.price 			7000
 	product.enabled 		true
 end

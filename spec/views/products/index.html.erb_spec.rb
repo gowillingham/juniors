@@ -7,6 +7,7 @@ describe "products/index" do
         :name => "Name",
         :description => "Description",
         :category => "Category",
+        :code => "Code",
         :enabled => false,
         :price => 3500
       ),
@@ -14,6 +15,7 @@ describe "products/index" do
         :name => "Name",
         :description => "Description",
         :category => "Category",
+        :code => "Code",
         :enabled => false,
         :price => 3500
       )
@@ -25,6 +27,7 @@ describe "products/index" do
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     assert_select "tr>td", :text => "Name".to_s, :count => 2
     assert_select "tr>td", :text => "Category".to_s, :count => 2
+    assert_select "tr>td", :text => "Code".to_s, :count => 2
     assert_select "tr>td", :text => false.to_s, :count => 2
     assert_select "tr>td", :text => dollarify(3500).to_s, :count => 2
   end

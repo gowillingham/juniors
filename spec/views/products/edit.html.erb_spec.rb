@@ -6,6 +6,7 @@ describe "products/edit" do
       :name => "MyString",
       :description => "MyString",
       :category => "MyString",
+      :code => "MyCode",
       :enabled => false,
       :price => "MyString"
     ))
@@ -20,6 +21,7 @@ describe "products/edit" do
       assert_select "input#product_name", :name => "product[name]"
       assert_select "textarea#product_description", :name => "product[description]"
       assert_select "input#product_category", :name => "product[category]"
+      assert_select "input#product_code", :name => "product[code]"
       assert_select "input#product_enabled", :name => "product[enabled]"
       assert_select "input#product_price", :name => "product[price]"
     end

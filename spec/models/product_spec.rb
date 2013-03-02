@@ -6,6 +6,7 @@ describe Product do
 			:name => 'name',
 			:description => 'description', 
 			:enabled => true,
+			:code => 'code', 
 			:category => 'category'
 		}
 	end

@@ -14,7 +14,7 @@
         <th>Balance</th>
         <th>School</th>
         <th>Grd</th>
-        <th>Sess</th>
+        <th>Product</th>
         <th></th>
       </tr>
     </thead>
@@ -27,7 +27,7 @@
           <td><%= dollarify r.balance %></td>
           <td><%= r.school %></td>
           <td><%= r.grade %></td>
-          <td><%= r.product.id %></td>
+          <td><%= r.product.code %></td>
           <td class="shrink">
             <%= link_to 'Payment', r.payments.first, :class => 'btn btn-mini' %>
             <%= link_to 'Edit', edit_registration_path(r), :class => 'btn btn-mini'  %>

@@ -54,6 +54,6 @@ describe "registrations/index" do
     assert_select "tr>td", :text => "email@example.com".to_s, :count => 2
     assert_select "tr>td", :text => "5".to_s, :count => 2
     assert_select "tr>td", :text => "school".to_s, :count => 2
-    assert_select "tr>td", :text => @product.id.to_s, :count => 2
+    assert_select "tr>td", :text => @product.code.to_s, :count => 2
   end
 end
