@@ -12,6 +12,7 @@
         <th>Player</th>
         <th>Email</th>
         <th>Balance</th>
+        <th>Paid?</th>
         <th>School</th>
         <th>Grd</th>
         <th>Product</th>
@@ -25,6 +26,7 @@
           <td><%= link_to "#{r.last_name}, #{r.first_name}", r %></td>
           <td><%= r.email %></td>
           <td><%= dollarify r.balance %></td>
+          <td><%= r.payments.first.paid? %></td>
           <td><%= r.school %></td>
           <td><%= r.grade %></td>
           <td><%= r.product.code %></td>
