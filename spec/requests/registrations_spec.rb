@@ -101,6 +101,7 @@ describe "Registrations" do
 				:waiver => true,
 				:volleyball => true
 			)
+			@registration.payments.create!
 		end
 
 		describe "success" do
