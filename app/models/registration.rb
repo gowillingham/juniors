@@ -30,6 +30,8 @@ class Registration < ActiveRecord::Base
 		:presence => { :if => :parent_helper, :message => 'required for parent helpers' }
 	validates :waiver, 
 		:acceptance => { :accept => true, :message => 'of liability must be accepted' }
+	validates :note, 
+		:length => { :maximum => 255 }
 
 	def balance
 		(self.payments.inject(0) { |sum, payment| sum + payment.amount }) - self.total_price
