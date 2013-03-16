@@ -31,6 +31,27 @@ describe RegistrationsController do
     }
   end
 
+  describe "POST confirm" do
+    it "rejects un-authenticated user" do
+      registration = Registration.create! valid_attributes
+      logout_user
+      put :confirm, :id => registration
+    end
+
+    it "assigns the requested registration as @registration" do
+      registration = Registration.create! valid_attributes
+      put :confirm, :id => registration
+      assigns(:registration).should eq(registration)
+    end
+
+    it "sends a confirmation message to the customer" do
+      registration = Registration.create! valid_attributes
+      expect {
+        put :confirm, :id => registration
+      }.to change{ ActionMailer::Base.deliveries.count }.by(1)
+    end
+  end
+
   describe "GET index" do
     it "rejects un-authenticated user" do
       logout_user

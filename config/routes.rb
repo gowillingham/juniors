@@ -7,7 +7,12 @@ Juniors::Application.routes.draw do
 
   post 'payments/ipn', :to => 'payments#ipn'
 
-  resources :registrations
+  resources :registrations do
+    member do
+      put :confirm
+    end
+  end
+
   resources :products
 
   match '/contact', :to => 'pages#contact'

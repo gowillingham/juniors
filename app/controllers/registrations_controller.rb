@@ -1,5 +1,19 @@
 class RegistrationsController < ApplicationController
   before_filter :require_login, :except => [:new, :show, :create]
+
+  def confirm
+    @registration = Registration.find(params[:id])
+    UserMailer.customer_notification_for_registration(@registration).deliver
+    
+    respond_to do |format|
+      format.html { 
+        flash[:success] = "Confirmation sent for #{@registration.name}. "
+        redirect_to registrations_url
+      }
+      format.json { head :no_content }      
+    end
+  end
+
   # GET /registrations
   # GET /registrations.json
   def index
