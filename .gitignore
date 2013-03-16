@@ -7,4 +7,6 @@ rdoc/*
 webrat.log
 *.sublime-project
 *.sublime-workspace
+serverlog
+
 
