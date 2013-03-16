@@ -42,6 +42,7 @@ describe "registrations/show" do
       rendered.should have_selector('.btn', :content => 'Edit')
       rendered.should have_selector('.btn', :content => 'Destroy')
       rendered.should have_selector('.btn', :content => 'Edit payment')
+      rendered.should have_selector('.btn', :content => 'Send confirmation')
 
       rendered.should match(/1/)
     end
@@ -60,6 +61,7 @@ describe "registrations/show" do
       rendered.should_not have_selector('.btn', :content => 'Edit')
       rendered.should_not have_selector('.btn', :content => 'Destroy')
       rendered.should_not have_selector('.btn', :content => 'Edit payment')       
+      rendered.should_not have_selector('.btn', :content => 'Send confirmation')
     end
   end
 end

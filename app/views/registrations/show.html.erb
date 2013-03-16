@@ -61,6 +61,7 @@
             <%= link_to 'All registrations', registrations_path, :class => 'btn' %>
             <%= link_to 'Edit', edit_registration_path(@registration), :class => 'btn' %>
             <%= link_to 'Edit payment', edit_payment_path(@registration.payments.last), :class => 'btn' %>
+            <%= link_to 'Send confirmation', confirm_registration_path(@registration), :method => :put, :class => 'btn' %>
             <%= link_to 'Destroy', registration_path(@registration), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
           </td>
         </tr>

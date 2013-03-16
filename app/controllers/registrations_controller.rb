@@ -8,7 +8,7 @@ class RegistrationsController < ApplicationController
     respond_to do |format|
       format.html { 
         flash[:success] = "Confirmation sent for #{@registration.name}. "
-        redirect_to registrations_url
+        redirect_to @registration
       }
       format.json { head :no_content }      
     end
