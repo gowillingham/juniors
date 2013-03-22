@@ -103,61 +103,99 @@
   </div>
 </div>
 
-<div class="alert alert-warning alert-block last">
-  <h4>Please volunteer as a parent helper!</h4>
-  <p>
-  Would you consider being a parent helper for your daughter's team? 
-  You don't need to know anything about volleyball. 
-  We'll make it easy and fun!!
-  </p>
-  <div class="field">
-    <div class="checkbox">
-      <%= f.check_box :parent_helper %>
-      <%= f.label :parent_helper, "Yes - I'll be a parent helper! " %>
+<% if logged_in? %>
+  <div class="control-group">
+    <div class="controls">
+      <%= f.label :parent_helper, :class => 'checkbox' do %>
+        <%= f.check_box :parent_helper %>
+        Parent helper?
+      <% end %>
     </div>
   </div>
-  <p>
-    If you'll be helping, please give us your tshirt size below. 
-  </p>
-  <div class="">
-    <%= f.select :parent_tshirt_size, SIZE_OPTIONS, :prompt => 'Select size ..' %>
+  <div class="control-group">
+    <%= f.label :parent_tshirt_size, :class=> 'control-label' %>
+    <div class="controls">
+      <%= f.select :parent_tshirt_size, SIZE_OPTIONS, :prompt => 'Select size ..' %>
+    </div>
   </div>
-</div>
+<% else %>
+  <div class="alert alert-warning alert-block last">
+    <h4>Please volunteer as a parent helper!</h4>
+    <p>
+    Would you consider being a parent helper for your daughter's team? 
+    You don't need to know anything about volleyball. 
+    We'll make it easy and fun!!
+    </p>
+    <div class="field">
+      <div class="checkbox">
+        <%= f.check_box :parent_helper %>
+        <%= f.label :parent_helper, "Yes - I'll be a parent helper! " %>
+      </div>
+    </div>
+    <p>
+      If you'll be helping, please give us your tshirt size below. 
+    </p>
+    <div>
+      <%= f.select :parent_tshirt_size, SIZE_OPTIONS, :prompt => 'Select size ..' %>
+    </div>
+  </div>
+<% end %>
 
-<div class="alert alert-success alert-block">
-  <h4>Include a lite volleyball with your registration? </h4>
-  <p>
-    All of our volleyball practice and play is done using specialized light volleyball from Tachikara designed for young volleyball players. 
-    Check this box if you would like to purchase a volleyball to keep along with your registration ($XX.XX).
-  </p>
-  <div class="field">
-    <div class="checkbox">
-      <%= f.check_box :volleyball %>
-      <%= f.label :volleyball, "Yes, include lite volleyball (#{dollarify LITE_VOLLEYBALL_PRICE_IN_CENTS})" %>
+<% if logged_in? %>
+  <div class="control-group">
+    <div class="controls">
+      <%= f.label :volleyball, :class => 'checkbox' do %>
+        <%= f.check_box :volleyball %>
+        Lite volleyball?
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="alert alert-success alert-block">
+    <h4>Include a lite volleyball with your registration? </h4>
+    <p>
+      All of our volleyball practice and play is done using specialized light volleyball from Tachikara designed for young volleyball players. 
+      Check this box if you would like to purchase a volleyball to keep along with your registration ($XX.XX).
+    </p>
+    <div class="field">
+      <div class="checkbox">
+        <%= f.check_box :volleyball %>
+        <%= f.label :volleyball, "Yes, include lite volleyball (#{dollarify LITE_VOLLEYBALL_PRICE_IN_CENTS})" %>
+      </div>  
+    </div>
+  </div>
+<% end %>
+
+<% if logged_in? %>
+  <div class="control-group">
+    <div class="controls">
+      <%= f.label :waiver, :class => 'checkbox' do %>
+        <%= f.check_box :waiver, :checked => true %>
+        <%= requirify('Waiver?') %>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="alert alert-info alert-block">
+    <h4>Waiver and release of liability</h4>
+    <p>
+      In consideration of your acceptance of my child as a participant in the <%= APP_LONG_NAME %> program, 
+      I hereby waive all claims against <%= APP_LONG_NAME %>, Inc., 
+      it’s coaches, board members, organizers, persons transporting my child to a from activities, 
+      from any claim arising out of injury or harm to my child incidental to, connected with, 
+      or arising out of the <%= APP_LONG_NAME %> activities. 
+      All sports have intrinsic hazards. 
+      Participation in the <%= APP_LONG_NAME %> in-house session implies some risk of injury.  
+      I understand that photos and/or videos may be taken of the session for advancement of learning.
+    </p> 
+    <div class="field">
+      <div class="checkbox">      
+        <%= f.check_box :waiver %>
+        <%= f.label :waiver, requirify('I have read and agree to the liability release') %>
+      </div>
     </div>  
   </div>
-</div>
-
-<div class="alert alert-info alert-block">
-  <h4>Waiver and release of liability</h4>
-  <p>
-    In consideration of your acceptance of my child as a participant in the <%= APP_LONG_NAME %> program, 
-    I hereby waive all claims against <%= APP_LONG_NAME %>, Inc., 
-    it’s coaches, board members, organizers, persons transporting my child to a from activities, 
-    from any claim arising out of injury or harm to my child incidental to, connected with, 
-    or arising out of the <%= APP_LONG_NAME %> activities. 
-    All sports have intrinsic hazards. 
-    Participation in the <%= APP_LONG_NAME %> in-house session implies some risk of injury.  
-    I understand that photos and/or videos may be taken of the session for advancement of learning.
-  </p> 
-  <div class="field">
-    <div class="checkbox">      
-      <%= f.check_box :waiver %>
-      <%= f.label :waiver, requirify('I have read and agree to the liability release') %>
-    </div>
-  </div>  
-</div>
-
+<% end %>
 <div class="control-group last">
   <%= f.label :note, 'Any special note for this registration', :class => 'control-label' %>
   <div class="controls">
