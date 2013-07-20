@@ -1,11 +1,11 @@
-INHOUSE_LEAGUE_FIRST_SESSION_DATE = '2013-04-20'.to_date
+INHOUSE_LEAGUE_FIRST_SESSION_DATE = '2013-09-28'.to_date
 
 INHOUSE_LEAGUE_SESSION_GRID = [
-  ["Sat, Apr 20", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", ""],
-  ["Sat, Apr 27", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", "Picture day!"],
-  ["Sat, May 4", "8:30-10:00a", "10:30-12:00p", "Lakeville North HS", ""],
-  ["Sat, May 11", "8:30-10:00a", "10:30-12:00p", "Lakeville North HS", ""],
-  ["Sat, May 18", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", "Tournament!"],
+  ["Sat, Sept 28", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", ""],
+  ["Sat, Oct 12", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", "Picture day!"],
+  ["Sat, Oct 19", "8:30-10:00a", "10:30-12:00p", "Lakeville North HS", ""],
+  ["Sat, Oct 26", "8:30-10:00a", "10:30-12:00p", "Lakeville North HS", ""],
+  ["Sat, Nov 2", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", "Tournament!"],
 ]
 
 APP_LONG_NAME = "Lakeville Junior Volleyball"
@@ -33,7 +33,6 @@ SCHOOL_OPTIONS = [
   ['All Saints', 'ASE'], 
   ['Cherryview', 'CVE'], 
   ['Christina Huddleston', 'CHE'], 
-  ['Crystal Lake', 'CLE'], 
   ['Eastview', 'EVE'], 
   ['John F Kennedy', 'JFK'], 
   ['Lake Marion', 'LME'], 
@@ -56,7 +55,7 @@ SIZE_OPTIONS = [
 
 SESSION_OPTIONS = [
   ['Session I Beginner (grade 1-3)', 1], 
-  ['Session II Intermediate (grade 3-6)', 2]
+  ['Session II Intermediate (grade 3-5)', 2]
 ]
 
 GRADE_OPTIONS = (1..6).map { |i| [i,i] }  
