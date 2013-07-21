@@ -1,3 +1,5 @@
+
+<% form_href = 'https://docs.google.com/forms/d/1gonQCWF1GqKlD2y3pCwaMS9KF4nnzf3aawjPpzOQnek/viewform' %>
 <%= render 'shared/show_flash' %>
 
 
@@ -20,7 +22,51 @@
 </p>
 -->
 
-<h3>[Girls Grade 1-5] Fall 2013 volleyball league registration!</h3>
+<h3>[12-and-under] Lakeville South Fall traveling league!</h3>
+<p>
+	Love volleyball and are looking for more competition?
+	Consider joining one of our fall 12-and-under teams. 
+	Lakeville South will sponsor several teams in the South Suburban Youth Volleyball league. 
+	Plan on joining us for a fun and competitive volleyball season this fall! 
+	More details and how to <%= link_to "pre-register online", form_href, :target => '_blank' %> are below. 
+</p>
+<dl class="dl-horizontal">
+  <dt>First Practice (tryout)</dt>
+  <dd>Tryouts are scheduled for Thursday Aug 8 and Thursday Aug 15 at Lakeville South HS from 600-800p. </dd>
+  <dt>Teams</dt>
+  <dd>
+  	Multiple teams for girls grade 6 and younger (fall 2013) with 8-10 players per team. More info available closer to the tryout date. 
+  </dd>
+  <dt>Practices</dt>
+  <dd>Thursday evenings for one hour and thirty minutes from the end of August through the end of October. </dd>
+  <dt>Matches</dt>
+  <dd>
+  	Double header matches are Monday evenings or possible Saturday mornings. 
+  	Matches are played at South HS or sites around the South metro. </dd>
+  <dt>Age and Eligibility</dt>
+  <dd>
+  	Girls entering grade six or below in the Lakeville South attendance area are welcome and encouraged to tryout. 
+  	<b>No prior volleyball experience is required! </b>
+  </dd>
+  <dt>Registration</dt>
+  <dd>
+  	Required pre-registration for the tryout is <%= link_to "available online", form_href, :target => '_blank' %> now. 
+  	There is no cost to pre-register or to tryout. 
+  </dd>
+  <dt>Questions?</dt>
+  <dd>
+  	Email <%= mail_to 'starkey77@charter.net', 'Penny Starkey', :encode => 'hex' %> 
+  	or <%= mail_to 'willingham@lakevillejuniors.com', 'Stephen Willingham', :encode => 'hex' %> with your questions!
+  </dd>
+</dl>
+<p>
+	No cost to tryout. Please help us plan for you by pre-registering 
+	. 
+	
+</p>
+
+
+<h3>[Girls Grade 1-5] Fall 2013 in-house volleyball league registration!</h3>
 <p>
 	Registration is available for fall in-house volleyball. We would love to have you playing volleyball with us again! 
 	You may <%= link_to 'register online now', new_registration_path %>, or a PDF version of the registration is available for <%= link_to 'download', 'fall.2013.inhouse.flyer.pdf', :target => '_blank' %>.

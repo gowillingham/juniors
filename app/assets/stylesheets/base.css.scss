@@ -21,6 +21,11 @@ fieldset .alert p {
 	margin:12px 0;
 }
 
+/* -- a little extra padding on the right so this is inset from an <p> on both sides -- */
+.dl-horizontal {
+	padding-right:80px;
+}
+
 .alert table tbody tr td:first-child {
 	padding-right:10px;
 }
