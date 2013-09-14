@@ -1,3 +1,5 @@
+JO_TRYOUT_FORM_URL = 'https://docs.google.com/forms/d/12b4KX6Bw2EBplZhLTLOaEbQ-VHfR6cNwzlVtIBPnO8U/viewform'
+
 INHOUSE_LEAGUE_FIRST_SESSION_DATE = '2013-09-28'.to_date
 
 INHOUSE_LEAGUE_SESSION_GRID = [
@@ -15,6 +17,7 @@ APP_HOST_NAME = "lakevillejuniors.com"
 INFO_EMAIL_ADDRESS = "info@lakevillejuniors.com"
 ADMIN_EMAIL_ADDRESS = "willingham@lakevillejuniors.com"
 OWNER_EMAIL_ADDRESS = "gowillingham@gmail.com"
+JO_CLUB_DIRECTOR_EMAIL_ADDRESS = 'denjohnson12@gmail.com'
 REPORT_TO_EMAIL_LIST = ['willingham@lakevillejuniors.com', 'info@lakevillejuniors.com']
 
 PAYPAL_COMPLETED = 'Completed'
