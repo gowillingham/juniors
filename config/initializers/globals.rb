@@ -1,4 +1,5 @@
 JO_TRYOUT_FORM_URL = 'https://docs.google.com/forms/d/12b4KX6Bw2EBplZhLTLOaEbQ-VHfR6cNwzlVtIBPnO8U/viewform'
+JO_FACT_SHEET_URL = 'https://docs.google.com/file/d/0B_zLWQdQueRZYVBUSVdlOW05UHc'
 
 INHOUSE_LEAGUE_FIRST_SESSION_DATE = '2013-09-28'.to_date
 

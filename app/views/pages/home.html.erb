@@ -8,26 +8,107 @@
 	</div>
 </header>
 
-<h3>[Girls Grade 4-9] Winter JO traveling volleyball tryout registration</h3>
+<h3>Winter JO traveling volleyball</h3>
 <p>
   <span class="label label-important">New for winter!</span>
-  For players looking to improve their volleyball game in the off-season, Lakeville Juniors will organize a USA Junior Olympic volleyball program for Lakeville South players.
+  For players looking to improve their volleyball game in the off-season, Lakeville Juniors will organize a USA Junior Olympic volleyball program for Lakeville South players. 
+  For more information about fees, coaching staff, and calendar please see our
+  <%= link_to 'Lakeville Juniors program fact sheet', JO_FACT_SHEET_URL, :target => '_blank' %>. 
+  Some highlights of our new program are listed below!
 </p>
 <ul>
   <li>One or more teams per grade level (grade 4-9) with 8-10 players per team</li>
   <li>Evening practice with weekend tournament play</li>
   <li>USA Junior Olympic sanctioned</li>
   <li>Season runs December through April, with play to begin in January</li>  
-  <li>Tryouts to be held in late October (date/site TBD)</li>
+  <li>Fees ranging from $300-400 for 10s-12s and $700-725 for 13s-15s. </li>
+  <li>Download our <%= link_to 'Lakeville Juniors JO fact sheet', JO_FACT_SHEET_URL, :target => '_blank' %> for more detailed information about teams calendar, fees, and staff. </li>
 </ul>
+<table style="margin-top:20px;margin-bottom:20px;">
+  <tr>
+    <td style="padding:10px 20px 10px 0">
+      <%= link_to 'Pre-register for South JO tryouts!', JO_TRYOUT_FORM_URL, :target => '_blank', :class => 'btn btn-primary btn-large' %>
+    </td>
+    <td>
+      <%= link_to 'Get more info!', JO_FACT_SHEET_URL, :target => '_blank', :class => 'btn btn-primary btn-large' %>
+    </td>
+  </tr>
+</table>
 <p>
   Need more information? Contact club director <%= mail_to JO_CLUB_DIRECTOR_EMAIL_ADDRESS, 'Denielle Johnson', :encode => 'hex' %> with questions.
-  <%= link_to 'Pre-register', JO_TRYOUT_FORM_URL, :target => '_blank' %> to receive more info and notification when tryout dates/times become available. 
-</p>
-<p style="margin-top:20px;margin-bottom:40px;">
-  <%= link_to 'Pre-register for South JO tryouts!', JO_TRYOUT_FORM_URL, :target => '_blank', :class => 'btn btn-primary btn-large' %>
+  Be sure to <%= link_to 'pre-register', JO_TRYOUT_FORM_URL, :target => '_blank' %> to receive more info and notification when tryout dates/times become available. 
 </p>
 
+<h3>Winter JO tryout schedule and pre-registration</h3>
+<p><span class="label label-important">Tryouts!</span>
+  Please put our tryout dates on your calendar. 
+  There is no cost to tryout, but it's important that you <%= link_to 'pre-register here', JO_TRYOUT_FORM_URL, :target => '_blank' %> 
+  and make every effort to attend both the open gym and tryout for your age group. 
+</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Activity</th>
+      <th>Age group</th>
+      <th>Grades</th>
+      <th>Site</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sat Oct 26</td>
+      <td>1200-200p</td>
+      <td><strong>Open Gym</strong></td>
+      <td>10s/11s/12s</td>
+      <td>4-6</td>
+      <td>Lakeville South HS</td>
+    </tr>
+    <tr>
+      <td>Sat Oct 26</td>
+      <td>200-400p</td>
+      <td><strong>Open Gym</strong></td>
+      <td>13s/14s</td>
+      <td>7-8</td>
+      <td>Lakeville South HS</td>
+    </tr>
+    <tr>
+      <td>Mon Oct 28</td>
+      <td>600-800p</td>
+      <td><strong>Tryout</strong></td>
+      <td>13s/14s</td>
+      <td>7-8</td>
+      <td>Lakeville South HS</td>
+    </tr>
+    <tr>
+      <td>Tues Oct 29</td>
+      <td>600-800p</td>
+      <td><strong>Tryout</strong></td>
+      <td>10s/11s/12s</td>
+      <td>4-6</td>
+      <td>Lakeville South HS</td>
+    </tr>
+    <tr>
+      <td>Wed Nov 6</td>
+      <td>600-800p</td>
+      <td><strong>Open gym</strong></td>
+      <td>15s</td>
+      <td>9</td>
+      <td>Lakeville South HS</td>
+    </tr>
+    <tr>
+      <td>Tues Nov 12</td>
+      <td>600-800p</td>
+      <td><strong>Tryout</strong></td>
+      <td>15s</td>
+      <td>9</td>
+      <td>Lakeville South HS</td>
+    </tr>
+  </tbody>
+</table>
+
+<!--
 <h3>[Girls Grade 1-5] Fall 2013 in-house volleyball league registration!</h3>
 <p>
   <span class="label label-important">Registration open!</span>
@@ -44,20 +125,6 @@
 </p>
 <p><%= league_when_and_where_grid(false).html_safe %></p>
 
-<h3>[12-and-under] Lakeville South Fall Traveling rosters</h3>
-<p>
-  Thank you to all the girls who tried our for our fall traveling teams. 
-  We had over 50 players trying out for our grade 3-6 teams. 
-  Players who did not make a team are eligible to attend August practice with our teams for volleyball skills training. 
-  The cost is $40 per player for four sessions. 
-  You may email <%= mail_to 'starkey77@charter.net', 'Penny Starkey', :encode => 'hex' %> to reserve your spot. 
-  The first practice will be <strong>Monday Aug 19 from 700-830p</strong> at LSHS-Performance gym. 
-</p>
-<p>
-  View the Fall 2013 fall traveling <%= link_to "calendar", 'http://lakevillejuniors.com/calendar' %>.
-</p>
-
-<!--
 <h3>Fall 2012 volleyball league just concluded</h3>
 <p>
 	Congratulations to our fall volleyball players - our tournament day was a huge success! 
