@@ -24,10 +24,8 @@
 	      <div class="nav-collapse">
 	        <ul class="nav">
 	          <li><%= link_to "Home", root_path, :class => :home %></li>
- 	          <li><%= link_to "Register In-House", new_registration_path, :class => :registration %></li> 
- 	          <li><%= link_to "Register JO", JO_TRYOUT_FORM_URL, :target => '_blank', :class => :registration %></li> 
  	          <li><%= link_to "Calendar", calendar_path, :class => :calendar %></li>     
- 						<li><%= link_to "About", about_path, :class => :about %></li>
+	          <li><%= link_to "About", about_path, :class => :about %></li>
 	          <li><%= link_to "Privacy", privacy_path, :class => :privacy %></li>
 	          <li><%= link_to "Contact us", contact_path, :class => :contact %></li>
 	          <li>
@@ -48,6 +46,32 @@
       <div class="span9"><%= yield %></div>
 
       <div class="span3">
+				<% if logged_in? %>  	
+	      	<ul class="nav nav-tabs nav-stacked">
+	      		<li><%= link_to 'Users', users_path, :class => '' %></li>
+	      		<li><%= link_to 'Products', products_path, :class => '' %></li>
+	      		<li><%= link_to 'Registrations', registrations_path, :class => '' %></li>
+	      		<li><%= link_to 'Payments', payments_path, :class => '' %></li>
+	      	</ul>
+      	<% end %>
+
+      	<h3>Register for ..</h3>
+      	<ul class="nav nav-tabs nav-stacked">
+      		<li><%= link_to "In-house Volleyball League", new_registration_path %></li>
+      		<li><%= link_to 'JO Traveling tryouts (USAV)', JO_TRYOUT_FORM_URL, :target => '_blank' %></li>
+      		<li><%= link_to 'Skill sessions', SKILL_SESSION_FORM_URL, :target => '_blank' %></li>
+      	</ul>
+
+        <h3>Links</h3>
+        <ul class="nav nav-tabs nav-stacked">
+        	<li><%= link_to 'Lakeville Cougars', "http://southvolleyball.ihigh.com/", :target => '_blank' %></li>
+        	<li><%= link_to 'North Country region (USAV)', "http://www.ncrusav.org/", :target => '_blank' %></li>
+        	<li><%= link_to 'USA Volleyball', "http://www.teamusa.org/USA-Volleyball.aspx/", :target => '_blank' %></li>
+        	<li><%= link_to 'Lakeville Panthers', "http://www.ihigh.com/lakevillenorthvolleyball/", :target => '_blank' %></li>
+        	<li><%= link_to 'Lakeville North Juniors', "http://www.lakevillenorthjuniors.com/", :target => '_blank' %></li>
+        </ul>
+
+<!--
 				<ul class="thumbnails">
 				  <li class="span3">
 				    <a href="/north_state_champs_2012.jpg" class="thumbnail">
@@ -61,30 +85,20 @@
 						</a>
 							<h6 style="text-align:center;">South vs Eastview 2012!</h6>
 				  </li>
-				</ul>    
-				<% if logged_in? %>  	
-	      	<ul class="nav nav-tabs nav-stacked">
-	      		<li><%= link_to 'Users', users_path, :class => '' %></li>
-	      		<li><%= link_to 'Products', products_path, :class => '' %></li>
-	      		<li><%= link_to 'Registrations', registrations_path, :class => '' %></li>
-	      		<li><%= link_to 'Payments', payments_path, :class => '' %></li>
-	      	</ul>
-      	<% end %>
-        <h3>Volleyball links</h3>
-        <ul class="unstyled">
-        	<li><%= link_to 'Lakeville Cougars', "http://southvolleyball.ihigh.com/", :target => '_blank' %></li>
-        	<li><%= link_to 'North Country region (USAV)', "http://www.ncrusav.org/", :target => '_blank' %></li>
-        	<li><%= link_to 'USA Volleyball', "http://www.teamusa.org/USA-Volleyball.aspx/", :target => '_blank' %></li>
-        	<li><%= link_to 'Lakeville Panthers', "http://www.ihigh.com/lakevillenorthvolleyball/", :target => '_blank' %></li>
-        	<li><%= link_to 'Lakeville North Juniors', "http://www.lakevillenorthjuniors.com/", :target => '_blank' %></li>
-        </ul>
+				</ul> 
+-->   
       </div>
     </div>
 
+
 	  <footer class="footer">
 	  	<div class="container">
-    	<hr />
     	<p><%= "Copyright #{Time.now.year} - #{APP_LONG_NAME}, Inc." %></p>
+    	<ul class="links">
+ 						<li><%= link_to "About", about_path %></li>
+	          <li><%= link_to "Privacy", privacy_path %></li>
+	          <li><%= link_to "Contact us", contact_path %></li>
+    	</ul>
 	  </footer>
 	</div>
 </body>
