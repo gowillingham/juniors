@@ -8,12 +8,36 @@
 	</div>
 </header>
 
+<section id="skill-sessions">
+  <div class="page-header">
+    <h3>12-And-Under Volleyball Skill Sessions</h3>
+    <p>
+      <span class="label label-important">Sign up now!</span>
+      Are you a grade 4-6 player looking for advanced volleyball instruction and training? 
+      Registration is now open for our popular 12-and-under (grade 4-6) volleyball skill sessions!
+      Please join us for our Nov/Dec skill session (date/time TBD) starting soon. 
+    </p>
+    <ul>
+      <li>Open to any player, regardless of attendance area (South or North)</li>
+      <li>Two separate sessions scheduled (Nov/Dec and Feb/Mar). </li>
+      <li>$95/session includes six 90 minute practices. </li>
+      <li>All training provided by Lakeville Juniors coaching staff. </li>
+      <li><%= link_to 'Registration', SKILL_SESSION_FORM_URL, :target => '_blank' %> is simple and can be done online. </li>
+    </ul> 
+    <p>
+      Need more information? 
+      Contact club director <%= mail_to JO_CLUB_DIRECTOR_EMAIL_ADDRESS, 'Denielle Johnson', :encode => 'hex' %> with questions.
+      Be sure to <%= link_to 'register online', SKILL_SESSION_FORM_URL, :target => '_blank' %> today. 
+      In the past these sessions have filled quickly and space is limited. 
+  </div>
+</section>
+
 <section id="jo-volleyball">
   <div class="page-header">
     <h3>South JO traveling volleyball</h3>
     <p>
       <span class="label label-important">New for winter!</span>
-      For Lakeville South players looking to improve their volleyball game in the off-season, 
+      For Lakeville South players looking to train and play competitive volleyball in the off-season, 
       Lakeville Juniors will organize a USA Junior Olympic traveling volleyball program. 
       For more information about fees, coaching staff, and calendar please see our
       <%= link_to 'Lakeville Juniors program fact sheet', JO_FACT_SHEET_URL, :target => '_blank' %>. 
@@ -25,7 +49,9 @@
       <li>USA Junior Olympic sanctioned</li>
       <li>Season runs December through April, with play to begin in January</li>  
       <li>Fees ranging from $300-400 for 10s-12s and $700-725 for 13s-15s. </li>
-      <li><strong class="text-success">There is no cost to tryout! </strong>Download our <%= link_to 'Lakeville Juniors JO fact sheet', JO_FACT_SHEET_URL, :target => '_blank' %> for more detailed information about teams calendar, fees, and staff. </li>
+      <li><strong class="text-success">There is no cost to tryout! </strong>Download our <%= link_to 'Lakeville Juniors JO fact sheet', JO_FACT_SHEET_URL, :target => '_blank' %> for more detailed information about teams calendar, fees, and staff. 
+        <%= link_to 'Pre-register', JO_TRYOUT_FORM_URL, :target => '_blank' %> for your age-level tryout today!
+      </li>
     </ul>
     <table style="margin-top:20px;margin-bottom:20px;">
       <tr>
@@ -45,8 +71,8 @@
 </section>
 
 <section id="jo-tryout-schedule">
-  <h3>Winter JO tryout schedule and pre-registration</h3>
-  <p><span class="label label-important">Tryouts!</span>
+  <h3>South JO tryout schedule</h3>
+  <p><span class="label label-important">Sign-up now!</span>
     Please put our tryout dates on your calendar. 
     There is no cost to tryout, but it's important that you <%= link_to 'pre-register here', JO_TRYOUT_FORM_URL, :target => '_blank' %> 
     and make every effort to attend both the open gym and tryout for your age group. 
