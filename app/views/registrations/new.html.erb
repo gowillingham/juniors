@@ -1,17 +1,27 @@
 <%= form_for @registration, :html => { :class => 'form-horizontal' } do |f| %>
-  <fieldset>
-    <legend>New inhouse volleyball registration</legend>
-    <%= render 'shared/form_errors', :object => @registration %>
-    <%= render 'fields', :f => f %>
-
-		<div class="form-actions">
-			<% if logged_in? %>
-			  <%= f.submit nil, :class => 'btn btn-primary' %>
-			<% else %>
-			  <%= f.submit 'Continue »', :class => 'btn btn-primary' %>
-			<% end %>
-		  or <%= link_to 'Cancel', root_path %>
+	<% if INHOUSE_LEAGUE_PUBLIC_REGISTRATION_ENABLED or logged_in? %>
+	  <fieldset>
+	    <legend>New inhouse volleyball registration</legend>
+	    <%= render 'shared/form_errors', :object => @registration %>
+	    <%= render 'fields', :f => f %>
+			<div class="form-actions">
+				<% if logged_in? %>
+				  <%= f.submit nil, :class => 'btn btn-primary' %>
+				<% else %>
+				  <%= f.submit 'Continue »', :class => 'btn btn-primary' %>
+				<% end %>
+			  or <%= link_to 'Cancel', root_path %>
+			</div>
+	  </fieldset>
+	<% else %>
+		<h3>In-House Volleyball registration</h3>
+		<div class="alert alert-error">
+			<strong>Registration is currently closed!</strong>
+			Either the league is in session or the next session is not yet open for registration. 
+			Need help with something?
+			Contact <%= mail_to INFO_EMAIL_ADDRESS %> for help.
 		</div>
-  </fieldset>
+	<% end %>
 <% end %>
+
 

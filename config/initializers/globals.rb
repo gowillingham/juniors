@@ -4,6 +4,8 @@ SKILL_SESSION_FORM_URL = 'https://docs.google.com/forms/d/17KPvtChUnK5wWsetNMn_3
 
 INHOUSE_LEAGUE_FIRST_SESSION_DATE = '2013-09-28'.to_date
 
+INHOUSE_LEAGUE_PUBLIC_REGISTRATION_ENABLED = false
+
 INHOUSE_LEAGUE_SESSION_GRID = [
   ["Sat, Sept 28", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", ""],
   ["Sat, Oct 12", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", "Picture day!"],
