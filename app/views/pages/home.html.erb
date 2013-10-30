@@ -1,4 +1,4 @@
-
+<% jo_tryout_rosters_url = 'https://docs.google.com/document/d/1vivDZjVpf-bVTtDVAoCWisWH57bo2oPtX-tRzQnyZIQ/edit?usp=sharing' %>
 <%= render 'shared/show_flash' %>
 
 <header id="overview" class="subhead page-header">
@@ -34,7 +34,7 @@
 </section>
 
 <section id="jo-volleyball">
-  <div class="">
+  <div class="page-header">
     <h3>South JO traveling volleyball</h3>
     <p>
       <span class="label label-important">New for winter!</span>
@@ -67,6 +67,13 @@
     <p>
       Need more information? Contact club director <%= mail_to JO_CLUB_DIRECTOR_EMAIL_ADDRESS, 'Denielle Johnson', :encode => 'hex' %> with questions.
       Be sure to <%= link_to 'pre-register', JO_TRYOUT_FORM_URL, :target => '_blank' %> to receive more info and notification when tryout dates/times become available. 
+    </p>
+  </div>
+  <div>
+    <h3>Rosters posted from 13s tryout</h3>
+    <p>
+      The final roster for <%= link_to 'South 13-1', jo_tryout_rosters_url, :target => '_blank' %> is posted.
+      You may find it <%= link_to 'here', jo_tryout_rosters_url, :target => '_blank' %>. 
     </p>
   </div>
 </section>
