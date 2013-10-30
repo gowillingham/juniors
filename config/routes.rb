@@ -19,6 +19,7 @@ Juniors::Application.routes.draw do
   match '/about', :to => 'pages#about'
   match '/privacy', :to => 'pages#privacy'
   match '/calendar', :to => 'pages#calendar'
+  match '/staff', :to => 'pages#staff'
 
   match '/signin', :to => 'sessions#new'
 
