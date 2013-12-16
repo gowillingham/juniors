@@ -10,19 +10,18 @@
 
 <section id="skill-sessions">
   <div class="page-header">
-    <h3>12-And-Under Volleyball Skill Sessions</h3>
+    <h3>12-And-Under Volleyball Skill Sessions (Feb/Mar 2014)</h3>
     <p>
       <span class="label label-important">Sign up now!</span>
       Are you a grade 4-6 player looking for advanced volleyball instruction and training? 
       Registration is now open for our popular 12-and-under (grade 4-6) volleyball skill sessions!
-      Please join us for our Nov/Dec skill session beginning on Thurs Nov 14. 
+      Please join us for our Feb/Mar skill session beginning on Tues Feb 11. 
     </p>
     <ul>
       <li>Open to any player, regardless of attendance area (South or North)</li>
-      <li>Two separate sessions scheduled (Nov/Dec and Feb/Mar). </li>
       <li>$95/session includes six 90 minute practices. </li>
       <li>All training provided by Lakeville Juniors coaching staff. </li>
-      <li>Nov/Dec session scheduled for Thurs Nov 14, Mon Nov 18, Tues Nov 26, Mon Dec 2/9, Thurs Dec 12 from 630-800p at Lakeville South HS.</li>
+      <li>Nov/Dec session scheduled for Tues Feb 11, Thur Feb 13, Thur Feb 20, Thur Feb 27 (March dates still TBD)</li>
       <li><%= link_to 'Registration', SKILL_SESSION_FORM_URL, :target => '_blank' %> is simple and can be done online. </li>
     </ul> 
     <p>
@@ -30,6 +29,26 @@
       Contact club director <%= mail_to JO_CLUB_DIRECTOR_EMAIL_ADDRESS, 'Denielle Johnson', :encode => 'hex' %> with questions.
       Be sure to <%= link_to 'register online', SKILL_SESSION_FORM_URL, :target => '_blank' %> today. 
       In the past these sessions have filled quickly and space is limited. 
+  </div>
+</section>
+
+<section id="inhouse">
+  <div class="page-header">
+    <h3>[Girls Grade 1-5] Spring 2014 in-house volleyball league registration!</h3>
+    <p>
+      <span class="label label-important">Registration open!</span>
+      Registration is now available for fall in-house volleyball. We would love to have you playing volleyball with us again! 
+      You may <%= link_to 'register online now', new_registration_path %>, or a PDF version of the registration is available for <%= link_to 'download', 'spring.2014.inhouse.flyer.pdf', :target => '_blank' %>.
+    </p>
+    <p>
+      Our in-house volleyball league is an instructional league for players in grades 1-5. 
+      We'll host a beginner session for grades 1-3 and an intermediate session for grades 3-5.
+      Players are placed on teams of 7-12 players for skill instruction and play. 
+      Each date includes individual volleyball instruction, team practice, and game competition, with the final date being round-robin tournament play. 
+      Players are instructed by Lakeville North/South high school team players and volunteer parent coaches, under the supervision of Lakeville Juniors head coaches.
+      In-house volleyball is open to all, regardless of attendance area. 
+    </p>
+    <p><%= league_when_and_where_grid(false).html_safe %></p>
   </div>
 </section>
 
@@ -122,21 +141,7 @@
   </table>
 </section>
 
-<h3>[Girls Grade 1-5] Fall 2013 in-house volleyball league registration!</h3>
-<p>
-  <span class="label label-important">Registration open!</span>
-	Registration is now available for fall in-house volleyball. We would love to have you playing volleyball with us again! 
-	You may <%= link_to 'register online now', new_registration_path %>, or a PDF version of the registration is available for <%= link_to 'download', 'fall.2013.inhouse.flyer.pdf', :target => '_blank' %>.
-</p>
-<p>
-	Our in-house volleyball league is an instructional league for players in grades 1-5. 
-  We'll host a beginner session for grades 1-3 and an intermediate session for grades 3-5.
-  Players are placed on teams of 7-12 players for skill instruction and play. 
-  Each date includes individual volleyball instruction, team practice, and game competition, with the final date being round-robin tournament play. 
-  Players are instructed by Lakeville North/South high school team players and volunteer parent coaches, under the supervision of Lakeville Juniors head coaches.
-  In-house volleyball is open to all, regardless of attendance area. 
-</p>
-<p><%= league_when_and_where_grid(false).html_safe %></p>
+
 
 <h3>Fall 2012 volleyball league just concluded</h3>
 <p>
