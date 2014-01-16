@@ -2,7 +2,7 @@ JO_TRYOUT_FORM_URL = 'https://docs.google.com/forms/d/12b4KX6Bw2EBplZhLTLOaEbQ-V
 JO_FACT_SHEET_URL = 'https://docs.google.com/file/d/0B_zLWQdQueRZYVBUSVdlOW05UHc'
 SKILL_SESSION_FORM_URL = 'https://docs.google.com/forms/d/17KPvtChUnK5wWsetNMn_3iekbEkTusbahndpyFBWZ6A/viewform'
 
-INHOUSE_LEAGUE_FIRST_SESSION_DATE = '2013-05-19'.to_date
+INHOUSE_LEAGUE_FIRST_SESSION_DATE = '2014-04-19'.to_date
 
 INHOUSE_LEAGUE_PUBLIC_REGISTRATION_ENABLED = true
 
