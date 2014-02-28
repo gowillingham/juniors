@@ -1,4 +1,4 @@
-<% jo_tryout_rosters_url = 'https://docs.google.com/document/d/1vivDZjVpf-bVTtDVAoCWisWH57bo2oPtX-tRzQnyZIQ/edit?usp=sharing' %>
+<% summer_camp_flyer_url = 'https://drive.google.com/file/d/0B5U14fZ2oOoVRHp2LXBIWVdiVGhGX0NpeWp0ZEZTVlBqVUdB/edit?usp=sharing' %>
 <%= render 'shared/show_flash' %>
 
 <header id="overview" class="subhead page-header">
@@ -7,7 +7,7 @@
 		<p class="lead">Lakeville South girl's volleyball teams, leagues, and instruction</p>
 	</div>
 </header>
-
+<!-- 
 <section id="skill-sessions">
   <div class="page-header">
     <h3>12-And-Under Volleyball Skill Sessions (Feb/Mar 2014)</h3>
@@ -31,7 +31,7 @@
       In the past these sessions have filled quickly and space is limited. 
   </div>
 </section>
-
+-->
 <section id="inhouse">
   <div class="page-header">
     <h3>[Girls Grade 1-5] Spring 2014 in-house volleyball league registration!</h3>
@@ -52,23 +52,24 @@
   </div>
 </section>
 
-<section id="jo-volleyball">
+<section id="camp">
   <div>
-    <h3>JO traveling rosters are posted from tryouts!</h3>
+    <h3>[Girls Grade 2-12] South 2014 summer volleyball camp</h3>
     <p>
-      The final rosters for South 
-      <%= link_to '10s', jo_tryout_rosters_url, :target => '_blank' %>, 
-      <%= link_to '11s', jo_tryout_rosters_url, :target => '_blank' %>,  
-      <%= link_to '12s', jo_tryout_rosters_url, :target => '_blank' %>,  
-      <%= link_to '13s', jo_tryout_rosters_url, :target => '_blank' %>,  
-      <%= link_to '14s', jo_tryout_rosters_url, :target => '_blank' %>,  
-      and <%= link_to '15s', jo_tryout_rosters_url, :target => '_blank' %>  
-      are posted.
-      You may find them <%= link_to 'here', jo_tryout_rosters_url, :target => '_blank' %>. 
+      <span class="label label-important">Registration open!</span>
+      Registration is now open for <%= link_to "South's Summer Volleyball Camp", summer_camp_flyer_url, :target => '_blank' %>. 
+      Work on skills with South's volleyball staff and prepare for fall volleyball season. 
+      Summer volleyball camp is open to all players, regardless of residence or attendance area. 
     </p>
+    <p>
+      Three sessions are offered for girls Youth (grade 2-6), Middle School (grade 6-8), and High School (grade 9-12) players. 
+      To register, or for more information about session times and pricing, download the camp 
+      <%= link_to 'registration form', summer_camp_flyer_url, :target => '_blank' %>.
+      Questions? 
+      Contact <%= mail_to 'willingham@lakevillejuniors.com', 'Stephen Willingham', :encode => 'hex' %> or call 952-431-6341. 
+    </p>  
   </div>
 </section>
-
 <!--
 <section id="jo-tryout-schedule">
   <h3>South JO tryout schedule</h3>
