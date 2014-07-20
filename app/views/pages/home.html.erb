@@ -7,6 +7,60 @@
 		<p class="lead">Lakeville South girl's volleyball teams, leagues, and instruction</p>
 	</div>
 </header>
+
+<section id="fall-12s">
+  <div>
+    <h3>Fall 12-and-under Girls Volleyball Teams</h3>
+    <p>
+      <span class="label label-important">Sign up now!</span>
+      Teams are forming for Fall 2014 Girls volleyball teams. 
+      We would love to have you play volleyball with us this fall. 
+      Teams will be formed at the U10 (grade 3/4), U11 (grade 5), and U12 (grade 6) levels. 
+      Season includes evening practices with Monday and/or Saturday league play, depending on the level and team. 
+      Please <%= link_to 'register online', JO_FALL_TRYOUT_FORM_URL, :target => '_blank' %> to reserve your place at our tryout today. 
+    </p>
+    <ul>
+      <li>Open to players in South attendance area. </li>
+      <li>$200 per player, includes one or more practices per week. </li>
+      <li>Season runs mid-August through late October. </li>
+      <li>There is no cost to tryout. Please <%= link_to 'register online now', JO_FALL_TRYOUT_FORM_URL, :target => '_blank' %> for the August tryout dates. </li>
+    </ul>
+    <p>  
+      Need more information? 
+      Contact club director <%= mail_to JO_CLUB_DIRECTOR_EMAIL_ADDRESS, 'Denielle Johnson', :encode => 'hex' %> with questions.
+    </p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th colspan="3">Tryout Schedule</th> 
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Tues Aug 5</td>
+          <td>600-800p</td>
+          <td><strong>Open Gym</strong></td>
+          <td>10s/11s/12s</td>
+          <td>LSHS Performance gym</td>
+        </tr>
+        <tr>
+          <td>Thurs Aug 7</td>
+          <td>600-800p</td>
+          <td><strong>Tryout/Open Gym</strong></td>
+          <td>10s/11s/12s</td>
+          <td>LSHS Performance gym</td>
+        </tr>
+        <tr>
+          <td>Thurs Aug 14</td>
+          <td>600-800p</td>
+          <td><strong>Tryout/Open Gym</strong></td>
+          <td>10s/11s/12s</td>
+          <td>LSHS Performance gym</td>
+        </tr>
+      </body>
+    </table>  
+  </div>
+</section>
 <!-- 
 <section id="skill-sessions">
   <div class="page-header">
@@ -33,33 +87,6 @@
 </section>
 -->
 
-<section id="camp">
-  <div>
-    <h3>[Girls & Boys Grade 2-12] South 2014 volleyball camp</h3>
-    <p>
-      <span class="label label-important">Registration open!</span>
-      Registration is now open for <%= link_to "South's Summer Volleyball Camp", summer_camp_flyer_url, :target => '_blank' %>. 
-      Work on skills with South's volleyball staff and prepare for fall volleyball season. 
-      New this year, summer camp is open to boys! As always, any player may register for camp, regardless of residence or attendance area. 
-    </p>
-    <p>
-      Three sessions are offered for girls Youth (grade 2-6), Middle School (grade 6-8), and High School (grade 9-12) players. 
-      To register, or for more information about session times and pricing, download the camp 
-      <%= link_to 'registration form', summer_camp_flyer_url, :target => '_blank' %>.
-      Questions? 
-      Contact <%= mail_to 'willingham@lakevillejuniors.com', 'Stephen Willingham', :encode => 'hex' %> or call 952-431-6341. 
-    </p>  
-  </div>
-</section>
-
-<h3>Spring 2014 volleyball league just concluded</h3>
-<p>
-  Congratulations to our spring volleyball players - our tournament day was a huge success! 
-  We had 200+ players participating in this past spring league. 
-  Don't miss out on next's Fall's session beginning in September - registrations will be accepted beginning in July.  
-</p>
-
-<!--
 <section id="inhouse">
   <div class="page-header">
     <h3>[Girls Grade 1-5] Spring 2014 in-house volleyball league registration!</h3>
@@ -69,7 +96,7 @@
       You may <%= link_to 'register online now', new_registration_path %>, or a PDF version of the registration is available for <%= link_to 'download', 'spring.2014.inhouse.flyer.pdf', :target => '_blank' %>.
     </p>
     <p>
-      Our in-house volleyball league is an instructional league for players in grades 1-5. 
+      Lakeville Juniors in-house volleyball league is an instructional league for players in grades 1-5. 
       We'll host a beginner session for grades 1-3 and an intermediate session for grades 3-5.
       Players are placed on teams of 7-12 players for skill instruction and play. 
       Each date includes individual volleyball instruction, team practice, and game competition, with the final date being round-robin tournament play. 
@@ -80,77 +107,6 @@
   </div>
 </section>
 
-<section id="jo-tryout-schedule">
-  <h3>South JO tryout schedule</h3>
-  <p><span class="label label-important">Sign-up now!</span>
-    Please put our tryout dates on your calendar. 
-    There is no cost to tryout, but it's important that you <%= link_to 'pre-register here', JO_TRYOUT_FORM_URL, :target => '_blank' %> 
-    and make every effort to attend both the open gym and tryout for your age group. 
-  </p>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Time</th>
-        <th>Activity</th>
-        <th>Age group</th>
-        <th>Grades</th>
-        <th>Site</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Sat Oct 26</td>
-        <td>200-400p</td>
-        <td><strong>Open Gym</strong></td>
-        <td>10s/11s/12s</td>
-        <td>4-6</td>
-        <td>Lakeville South HS</td>
-      </tr>
-      <tr>
-        <td>Sat Oct 26</td>
-        <td>1200-200p</td>
-        <td><strong>Open Gym</strong></td>
-        <td>13s/14s</td>
-        <td>7-8</td>
-        <td>Lakeville South HS</td>
-      </tr>
-      <tr>
-        <td>Mon Oct 28</td>
-        <td>600-800p</td>
-        <td><strong>Tryout</strong></td>
-        <td>13s/14s</td>
-        <td>7-8</td>
-        <td>Lakeville South HS</td>
-      </tr>
-      <tr>
-        <td>Tues Oct 29</td>
-        <td>600-800p</td>
-        <td><strong>Tryout</strong></td>
-        <td>10s/11s/12s</td>
-        <td>4-6</td>
-        <td>Lakeville South HS</td>
-      </tr>
-      <tr>
-        <td>Wed Nov 6</td>
-        <td>600-800p</td>
-        <td><strong>Open gym</strong></td>
-        <td>15s</td>
-        <td>9</td>
-        <td>Lakeville South HS</td>
-      </tr>
-      <tr>
-        <td>Tues Nov 12</td>
-        <td>600-800p</td>
-        <td><strong>Tryout</strong></td>
-        <td>15s</td>
-        <td>9</td>
-        <td>Lakeville South HS</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
--->
 
 
 

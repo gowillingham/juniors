@@ -1,18 +1,19 @@
 JO_TRYOUT_FORM_URL = 'https://docs.google.com/forms/d/12b4KX6Bw2EBplZhLTLOaEbQ-VHfR6cNwzlVtIBPnO8U/viewform'
+JO_FALL_TRYOUT_FORM_URL = 'https://docs.google.com/forms/d/1gonQCWF1GqKlD2y3pCwaMS9KF4nnzf3aawjPpzOQnek/viewform'
 JO_TRYOUT_ROSTERS_URL = 'https://docs.google.com/document/d/1vivDZjVpf-bVTtDVAoCWisWH57bo2oPtX-tRzQnyZIQ/edit?usp=sharing'
 JO_FACT_SHEET_URL = 'https://docs.google.com/file/d/0B_zLWQdQueRZYVBUSVdlOW05UHc'
 SKILL_SESSION_FORM_URL = 'https://docs.google.com/forms/d/17KPvtChUnK5wWsetNMn_3iekbEkTusbahndpyFBWZ6A/viewform'
 
-INHOUSE_LEAGUE_FIRST_SESSION_DATE = '2014-04-19'.to_date
+INHOUSE_LEAGUE_FIRST_SESSION_DATE = '2014-09-27'.to_date
 
 INHOUSE_LEAGUE_PUBLIC_REGISTRATION_ENABLED = false
 
 INHOUSE_LEAGUE_SESSION_GRID = [
-  ["Sat, April 19", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", ""],
-  ["Sat, April 26", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", "Picture day!"],
-  ["Sat, May 3", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", ""],
-  ["Sat, May 10", "8:30-10:00a", "10:30-12:00p", "Lakeville North HS", ""],
-  ["Sat, May 17", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", "Tournament!"],
+  ["Sat, Sept 27", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", ""],
+  ["Sat, Oct 11", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", "Picture day!"],
+  ["Sat, Oct 25", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", ""],
+  ["Sat, Nov 1", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", ""],
+  ["Sat, May 8", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", "Tournament!"],
 ]
 
 APP_LONG_NAME = "Lakeville Junior Volleyball"
