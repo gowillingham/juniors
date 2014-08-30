@@ -4,13 +4,13 @@ JO_TRYOUT_ROSTERS_URL = 'https://docs.google.com/document/d/1kvH7Bft4Ail-nkdAV9I
 JO_FACT_SHEET_URL = 'https://docs.google.com/file/d/0B_zLWQdQueRZYVBUSVdlOW05UHc'
 SKILL_SESSION_FORM_URL = 'https://docs.google.com/forms/d/17KPvtChUnK5wWsetNMn_3iekbEkTusbahndpyFBWZ6A/viewform'
 
-INHOUSE_LEAGUE_FIRST_SESSION_DATE = '2014-09-27'.to_date
+INHOUSE_LEAGUE_FIRST_SESSION_DATE = '2014-10-11'.to_date
 
 INHOUSE_LEAGUE_PUBLIC_REGISTRATION_ENABLED = true
 
 INHOUSE_LEAGUE_SESSION_GRID = [
-  ["Sat, Sept 27", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", ""],
-  ["Sat, Oct 11", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", "Picture day!"],
+  ["Sat, Oct 11", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", ""],
+  ["Sat, Oct 18", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", "Picture day!"],
   ["Sat, Oct 25", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", ""],
   ["Sat, Nov 1", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", ""],
   ["Sat, Nov 8", "8:30-10:00a", "10:30-12:00p", "Lakeville South HS", "Tournament!"],

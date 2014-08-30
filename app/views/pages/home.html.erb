@@ -7,6 +7,28 @@
 	</div>
 </header>
 
+<section id="inhouse">
+  <div class="page-header">
+    <h3>[Girls + Boys Grade 1-5] Spring 2014 in-house volleyball league registration!</h3>
+    <p>
+      <span class="label label-important">Registration open!</span>
+      Registration is now available for fall in-house volleyball. 
+      We would love to have you playing volleyball with us again. 
+      Don't forget that our league now includes boys!
+      You may <%= link_to 'register online now', new_registration_path %>, or a PDF version of the registration is available for <%= link_to 'download', 'fall.2014.inhouse.flyer.pdf', :target => '_blank' %>.
+    </p>
+    <p>
+      Lakeville Juniors in-house volleyball league is an instructional league for players in grades 1-5. 
+      We'll host a beginner session for grades 1-3 and an intermediate session for grades 3-5.
+      Players are placed on teams of 7-12 players for skill instruction and play. 
+      Each date includes individual volleyball instruction, team practice, and game competition, with the final date being round-robin tournament play. 
+      Players are instructed by Lakeville North/South high school team players and volunteer parent coaches, under the supervision of Lakeville Juniors head coaches.
+      In-house volleyball is open to all, regardless of attendance area. 
+    </p>
+    <p><%= league_when_and_where_grid(false).html_safe %></p>
+  </div>
+</section>
+
 <section id="fall-12s">
   <div>
     <h3>Fall U12 Tryouts - Team Rosters Posted</h3>
@@ -42,26 +64,6 @@
   </div>
 </section>
 -->
-
-<section id="inhouse">
-  <div class="page-header">
-    <h3>[Girls Grade 1-5] Spring 2014 in-house volleyball league registration!</h3>
-    <p>
-      <span class="label label-important">Registration open!</span>
-      Registration is now available for fall in-house volleyball. We would love to have you playing volleyball with us again! 
-      You may <%= link_to 'register online now', new_registration_path %>, or a PDF version of the registration is available for <%= link_to 'download', 'fall.2014.inhouse.flyer.pdf', :target => '_blank' %>.
-    </p>
-    <p>
-      Lakeville Juniors in-house volleyball league is an instructional league for players in grades 1-5. 
-      We'll host a beginner session for grades 1-3 and an intermediate session for grades 3-5.
-      Players are placed on teams of 7-12 players for skill instruction and play. 
-      Each date includes individual volleyball instruction, team practice, and game competition, with the final date being round-robin tournament play. 
-      Players are instructed by Lakeville North/South high school team players and volunteer parent coaches, under the supervision of Lakeville Juniors head coaches.
-      In-house volleyball is open to all, regardless of attendance area. 
-    </p>
-    <p><%= league_when_and_where_grid(false).html_safe %></p>
-  </div>
-</section>
 
 
 
