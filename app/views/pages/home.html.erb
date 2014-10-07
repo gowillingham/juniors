@@ -24,7 +24,7 @@
       Download our <%= link_to 'program information sheet', '2014.winter.jo.info.flyer.pdf', :target => '_blank' %> for tryout dates and times (tentative, subject to change), and for more complete details about each team. 
     </p>
     <p>
-      Questions? Contact club director Denielle Johnson. 
+      Questions? Contact club director <%= mail_to JO_CLUB_DIRECTOR_EMAIL_ADDRESS, 'Denielle Johnson', :encode => 'hex' %>. 
     </p>
   </div>
 </section>
