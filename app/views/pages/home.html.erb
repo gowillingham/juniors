@@ -29,10 +29,82 @@
   </div>
 </section>
 
+<section id="skill-sessions">
+  <div class="">
+    <h3>[Girls Grade 4-6] Volleyball Skill Sessions (Nov/Dec 2014)</h3>
+    <p>
+      <span class="label label-important">Sign up now!</span>
+      Are you a grade 4-6 player looking for advanced volleyball instruction and training? 
+      Registration is now open for our popular 12-and-under (grade 4-6) volleyball skill sessions!
+      Please join us for our Nov/Dec skill session beginning on Tues Nov 13. 
+    </p>
+    <ul>
+      <li>Open to any player, regardless of attendance area (South or North)</li>
+      <li>$95/session includes six 90 minute practices. </li>
+      <li>All training provided by Lakeville Juniors coaching staff. </li>
+      <li>Nov/Dec session scheduled for Tues Nov 13, Mon Nov 17, Tues Nov 18, Mon Nov 24, Mon Dec 1, Thur Dec 4</li>
+      <li><%= link_to 'Registration', SKILL_SESSION_FORM_URL, :target => '_blank' %> is simple and can be done online. </li>
+    </ul> 
+    <p>
+      Need more information? 
+      Contact club director <%= mail_to JO_CLUB_DIRECTOR_EMAIL_ADDRESS, 'Denielle Johnson', :encode => 'hex' %> with questions.
+      Be sure to <%= link_to 'register online', SKILL_SESSION_FORM_URL, :target => '_blank' %> today. 
+      In the past these sessions have filled quickly and space is limited. 
+    </p>
+    <p>
+    <table class="table" style="border-top: hidden;">
+      <tr>
+        <th style="width:15%">Skill Sessions</th>
+        <th>Time</th>
+        <th style="width:20%;">Site</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>Thurs Nov 13</td>
+        <td>6:00-7:30 pm</td>
+        <td>Lakeville South HS</td>
+        <td>Main gym</td>
+      </tr>
+      <tr>
+        <td>Mon Nov 17</td>
+        <td>6:00-7:30 pm</td>
+        <td>Lakeville South HS</td>
+        <td>Auxilliary gym</td>
+      </tr>
+      <tr>
+        <td>Tues Nov 18</td>
+        <td>6:00-7:30 pm</td>
+        <td>Lakeville South HS</td>
+        <td>Main gym</td>
+      </tr>
+      <tr>
+        <td>Mon Nov 24</td>
+        <td>6:00-7:30 pm</td>
+        <td>Lakeville South HS</td>
+        <td>Auxilliary gym</td>
+      </tr>
+      <tr>
+        <td>Mon Dec 1</td>
+        <td>6:00-7:30 pm</td>
+        <td>Lakeville South HS</td>
+        <td>Main gym</td>
+      </tr>
+      <tr>
+        <td>Thurs Dec 4</td>
+        <td>6:00-7:30 pm</td>
+        <td>Lakeville South HS</td>
+        <td>Main gym</td>
+      </tr>
+    </table>
 
+    </p>
+  </div>
+</section>
+
+<!-- 
 <section id="inhouse">
   <div>
-    <h3>[Girls + Boys Grade 1-5] Spring 2014 in-house volleyball league registration!</h3>
+    <h3>[Girls + Boys Grade 1-5] Fall 2014 in-house volleyball league registration!</h3>
     <p>
       <span class="label label-important">Registration open!</span>
       There is still time to sign up for Saturday Volleyball league. 
@@ -49,31 +121,6 @@
       In-house volleyball is open to all, regardless of attendance area. 
     </p>
     <p><%= league_when_and_where_grid(false).html_safe %></p>
-  </div>
-</section>
-
-<!-- 
-<section id="skill-sessions">
-  <div class="page-header">
-    <h3>12-And-Under Volleyball Skill Sessions (Feb/Mar 2014)</h3>
-    <p>
-      <span class="label label-important">Sign up now!</span>
-      Are you a grade 4-6 player looking for advanced volleyball instruction and training? 
-      Registration is now open for our popular 12-and-under (grade 4-6) volleyball skill sessions!
-      Please join us for our Feb/Mar skill session beginning on Tues Feb 11. 
-    </p>
-    <ul>
-      <li>Open to any player, regardless of attendance area (South or North)</li>
-      <li>$95/session includes six 90 minute practices. </li>
-      <li>All training provided by Lakeville Juniors coaching staff. </li>
-      <li>Feb/Mar session scheduled for Tues Feb 11, Thur Feb 13, Wed Feb 19, Wed Feb 26 (March dates still TBD)</li>
-      <li><%= link_to 'Registration', SKILL_SESSION_FORM_URL, :target => '_blank' %> is simple and can be done online. </li>
-    </ul> 
-    <p>
-      Need more information? 
-      Contact club director <%= mail_to JO_CLUB_DIRECTOR_EMAIL_ADDRESS, 'Denielle Johnson', :encode => 'hex' %> with questions.
-      Be sure to <%= link_to 'register online', SKILL_SESSION_FORM_URL, :target => '_blank' %> today. 
-      In the past these sessions have filled quickly and space is limited. 
   </div>
 </section>
 
