@@ -1,6 +1,6 @@
 JO_TRYOUT_FORM_URL = 'https://docs.google.com/forms/d/12b4KX6Bw2EBplZhLTLOaEbQ-VHfR6cNwzlVtIBPnO8U/viewform'
 JO_FALL_TRYOUT_FORM_URL = 'https://docs.google.com/forms/d/1gonQCWF1GqKlD2y3pCwaMS9KF4nnzf3aawjPpzOQnek/viewform'
-JO_TRYOUT_ROSTERS_URL = 'https://docs.google.com/document/d/1kvH7Bft4Ail-nkdAV9IwRh_jm0NVhKAhU2WK1oTzZJk/edit#heading=h.3l3hw3asw214'
+JO_TRYOUT_ROSTERS_URL = 'https://docs.google.com/document/d/1xUaxYivxRCh11lpf6YgitCjPrnLzi6m3ECs-peBrKpM/edit#'
 JO_FACT_SHEET_URL = 'https://docs.google.com/file/d/0B_zLWQdQueRZYVBUSVdlOW05UHc'
 SKILL_SESSION_FORM_URL = 'https://docs.google.com/forms/d/17KPvtChUnK5wWsetNMn_3iekbEkTusbahndpyFBWZ6A/viewform'
 
