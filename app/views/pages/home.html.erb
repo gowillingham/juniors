@@ -57,7 +57,7 @@
 </section>
 
 <section id="inhouse">
-  <div class="page-header">
+  <div class="">
     <h3>[Girls + Boys Grade 1-5] Spring 2015 In-house volleyball league registration!</h3>
     <p>
       <span class="label label-important">Registration open!</span>
@@ -76,18 +76,26 @@
     <p><%= league_when_and_where_grid(false).html_safe %></p>
   </div>
 </section>
-
+<!--
 <section id="camp">
   <div>
     <h3>[Girls + Boys Grade 2-12] Cougar Summer Volleyball Camp</h3>
     <p>
       <span class="label label-important">Sign up for Camp!</span>
       Now accepting registration for Lakeville South Summer Volleyball Camp. 
-      You may register online now, or a PDF version of the registration is available for download. 
+      You may <%= link_to 'register online now', BOOSTER_CAMP_REGISTRATION_URL, :target => '_blank' %>, 
+      or a PDF version of the registration is available for <%= link_to 'download', BOOSTER_CAMP_FLYER_URL, :target => '_blank' %>. 
+    </p>
+    <p>
+      The Lakeville South High School program invites you to participate in their summer 2015 volleyball camps. 
+      Our High School camp (9-12) will be led by former Lakeville volleyball star 
+      and Augsurg College head volleyball coach Jane Becker, two-time MIAC coach of the year. 
+      Our Youth and Middle School camps will be led by South High School staff and players. 
+      
     </p>
   </div>
 </section>
-<!--
+
 <section id="fall-12s">
   <div>
     <h3>Fall U12 Tryouts - Team Rosters Posted</h3>

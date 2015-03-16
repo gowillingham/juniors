@@ -5,6 +5,7 @@ JO_FACT_SHEET_URL = 'https://docs.google.com/file/d/0B_zLWQdQueRZYVBUSVdlOW05UHc
 SKILL_SESSION_FORM_URL = 'https://docs.google.com/forms/d/17KPvtChUnK5wWsetNMn_3iekbEkTusbahndpyFBWZ6A/viewform'
 JO_TOURNAMENT_REGISTRATION_FORM_URL = 'https://docs.google.com/document/d/1zUE0HGoVVwzicpp2dSrsSYLl4S1Xum5Eh-Zf0CQzfR8/edit'
 BOOSTER_CAMP_REGISTRATION_URL = 'https://docs.google.com/forms/d/1C1G3n-pC0aPs8q7zqcx9MqnVao7IxUVRFyFtxt7ZqxY/viewform'
+BOOSTER_CAMP_FLYER_URL = 'https://drive.google.com/file/d/0B5U14fZ2oOoVYjRubW1NLVNtaVU/view?usp=sharing'
 
 INHOUSE_LEAGUE_FIRST_SESSION_DATE = '2015-4-25'.to_date
 
